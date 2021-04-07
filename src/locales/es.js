@@ -11,7 +11,7 @@ export default {
   'login.form.email.invalid': 'Debe ingresar un email válido',
   'login.form.password.presence': 'Debe ingresar una contraseña para continuar',
 
-  'signup.title': 'REGISRARSE',
+  'signup.title': 'REGISTRARSE',
   'signup.signin': 'Iniciar Sesión',
   'signup.form.passconfirmation': 'Confirmación de Contraseña',
   'signup.form.confirmation.presence': 'Debe confirmar su contraseña para continuar',
