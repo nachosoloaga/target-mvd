@@ -1,5 +1,6 @@
 // / <reference types="Cypress" />
 import { logoutStub } from 'stubs/sessionStubs';
+import { APP_TITLE } from 'src/constants/constants';
 
 describe('Home Page', () => {
   beforeEach(() => {
@@ -10,7 +11,7 @@ describe('Home Page', () => {
 
   context('Homepage View', () => {
     it('displays a welcome message', () => {
-      cy.get('p').contains('Welcome to React Redux Base');
+      cy.get('p').contains(`Welcome to ${APP_TITLE}`);
     });
 
     it('should see the logged out button', () => {

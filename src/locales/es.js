@@ -20,7 +20,7 @@ export default {
 
   'logout.button': 'LOGOUT',
 
-  'home.welcome': 'Bienvenido a React Redux Base {username}',
+  'home.welcome': 'Bienvenido a Target MVD {username}',
 
   // errors
   'email.presence': 'Debe ingresar un email para continuar',

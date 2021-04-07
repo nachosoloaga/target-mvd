@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-base",
+  "name": "rootstrap-target-mvd",
   "version": "0.1.0",
-  "description": "Rootstrap React Redux Base",
+  "description": "Rootstrap Target MVD",
   "engines": {
     "npm": ">4"
   },

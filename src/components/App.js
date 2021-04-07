@@ -6,6 +6,7 @@ import { useSession } from 'hooks';
 import RouteFromPath from 'components/routes/RouteFromPath';
 import routes from '../routes';
 import Header from './common/Header';
+import { APP_TITLE } from '../constants/constants';
 
 const App = () => {
   const { authenticated } = useSession();
@@ -13,7 +14,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>RS React Redux Base</title>
+        <title>{APP_TITLE}</title>
       </Helmet>
       <Header />
       <BrowserRouter>
