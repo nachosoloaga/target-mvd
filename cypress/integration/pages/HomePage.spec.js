@@ -1,6 +1,6 @@
 // / <reference types="Cypress" />
 import { logoutStub } from 'stubs/sessionStubs';
-import { APP_TITLE } from 'src/constants/constants';
+import { APP_TITLE } from '../../../src/constants/constants';
 
 describe('Home Page', () => {
   beforeEach(() => {
