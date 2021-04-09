@@ -11,7 +11,7 @@ export default {
   'login.form.email.invalid': 'Debe ingresar un email válido',
   'login.form.password.presence': 'Debe ingresar una contraseña para continuar',
 
-  'signup.title': 'REGISRARSE',
+  'signup.title': 'REGISTRARSE',
   'signup.signin': 'Iniciar Sesión',
   'signup.form.passconfirmation': 'Confirmación de Contraseña',
   'signup.form.confirmation.presence': 'Debe confirmar su contraseña para continuar',
@@ -20,7 +20,7 @@ export default {
 
   'logout.button': 'LOGOUT',
 
-  'home.welcome': 'Bienvenido a React Redux Base {username}',
+  'home.welcome': 'Bienvenido a Target MVD {username}',
 
   // errors
   'email.presence': 'Debe ingresar un email para continuar',
