@@ -1,0 +1,25 @@
+@use 'src/styles/_variables';
+
+.social-media-container {
+  background: variables.$blue;
+  position: absolute;
+  right: 0rem;
+  width: 50%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-store-container {
+  position: absolute;
+  bottom: 9.375rem;
+}
+
+.social-links-container {
+  position: absolute;
+  bottom: 6.25rem;
+}
+
+.iphone-container {
+  position: absolute;
+}
