@@ -2,6 +2,11 @@
 @import '~rootstrap-ui/dist/styles/scss/index';
 @import '~loaders.css/src/animations/ball-scale-multiple';
 
+html,
+body {
+  min-height: 100vh;
+}
+
 .loading-wrapper {
   align-items: center;
   display: flex;

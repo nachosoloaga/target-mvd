@@ -2,9 +2,10 @@ import React from 'react';
 
 import routesPaths from 'constants/routesPaths';
 import HomePage from 'pages/HomePage';
-import LoginPage from 'pages/LoginPage';
+import LoginPage from 'pages/LoginPage/LoginPage';
 import SignUpPage from 'pages/SignUpPage';
 import NotFoundPage from 'pages/NotFoundPage';
+import SocialMediaContainer from 'components/common/SocialMediaContainer/SocialMediaContainer';
 
 const routes = [
   {
@@ -16,6 +17,10 @@ const routes = [
   {
     path: routesPaths.login,
     component: <LoginPage />
+  },
+  {
+    path: '/test',
+    component: <SocialMediaContainer />
   },
   {
     path: routesPaths.signUp,
