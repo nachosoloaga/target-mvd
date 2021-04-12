@@ -2,16 +2,14 @@ import React, { memo } from 'react';
 import { func } from 'prop-types';
 import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
 
+import { useStatus, useForm, useValidation, useTextInputProps } from 'hooks';
 import { REJECTED, PENDING } from 'constants/actionStatusConstants';
-import { APP_TITLE } from 'constants/constants';
+import { login } from 'state/actions/userActions';
+import { login as loginValidations } from 'utils/constraints';
 
 import Loading from 'components/common/Loading';
 import Input from 'components/common/Input';
-import { login as loginValidations } from 'utils/constraints';
-import { useStatus, useForm, useValidation, useTextInputProps } from 'hooks';
-import { login } from 'state/actions/userActions';
 
-import { ReactComponent as Smilies } from 'assets/smilies.svg';
 import './login-form.scss';
 
 const messages = defineMessages({
@@ -58,19 +56,6 @@ export const LoginForm = ({ onSubmit }) => {
 
   return (
     <div className="form-container">
-      <div className="info-text-container">
-        <Smilies />
-        <div className="info-text">
-          <h1>{APP_TITLE.toUpperCase()}</h1>
-          <div className="info-text">
-            <h2>Find people near you & Connect</h2>
-            <p>
-              Create a target wherever on the map, specify your interest: Travel, Dating, Music, etc
-              and start conecting with others who share your interest.
-            </p>
-          </div>
-        </div>
-      </div>
       <form className="login-form" onSubmit={handleSubmit}>
         {status === REJECTED && <strong>{error}</strong>}
         <div>
@@ -92,7 +77,7 @@ export const LoginForm = ({ onSubmit }) => {
           />
         </div>
         <button className="button" type="submit">
-          <FormattedMessage id="signup.title" />
+          <FormattedMessage id="login.title" />
         </button>
         {status === PENDING && <Loading />}
       </form>

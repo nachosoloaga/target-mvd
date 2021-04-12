@@ -1,10 +1,11 @@
 @import 'variables';
-@import '~rootstrap-ui/dist/styles/scss/index';
 @import '~loaders.css/src/animations/ball-scale-multiple';
 
 html,
 body {
   min-height: 100vh;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .loading-wrapper {
@@ -31,4 +32,26 @@ body {
   &__logo {
     width: 150px;
   }
+}
+
+.input-text {
+  width: 188px;
+  height: 37px;
+  left: 255px;
+  top: 382px;
+
+  border: 0.5px solid $black;
+  box-sizing: border-box;
+}
+
+.button {
+  width: 185px;
+  height: 37px;
+  left: 257px;
+  top: 520px;
+
+  margin-top: 3%;
+  color: $white;
+
+  background: $black;
 }

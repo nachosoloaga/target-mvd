@@ -1,4 +1,69 @@
 .login-page-container {
   display: flex;
   min-height: 100vh;
+  flex-direction: column;
+}
+
+.info-text-container {
+  margin-top: 5%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      width: 50%;
+      text-align: center;
+      margin-top: 0;
+    }
+  }
+}
+
+.links-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+  }
+
+  hr {
+    width: 50%;
+  }
+
+  .recover-password {
+    margin-top: 3%;
+
+    a {
+      font-size: 14px;
+    }
+  }
+
+  .login-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    text-align: center;
+  }
 }
