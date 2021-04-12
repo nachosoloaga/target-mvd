@@ -3,6 +3,7 @@ import { arrayOf, bool, func, string } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import { parseInputErrors } from 'utils/helpers';
+import '../../styles/_variables.scss';
 
 const Input = ({ label, name, value, onChange, errors, active, touched, ...props }) => {
   // Register field in the form
@@ -14,10 +15,10 @@ const Input = ({ label, name, value, onChange, errors, active, touched, ...props
   return (
     <div>
       {label && <label htmlFor={name}>{label}</label>}
-      <div>
+      <div className="input-container">
         <input name={name} value={value} onChange={onChange} {...props} />
         {touched && errors && (
-          <span>
+          <span className="input-error-message">
             <FormattedMessage
               id={parseInputErrors(errors)}
               defaultMessage={parseInputErrors(errors)}

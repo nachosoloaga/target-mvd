@@ -35,13 +35,23 @@ body {
 }
 
 .input-text {
-  width: 188px;
+  width: $input-width;
   height: 37px;
   left: 255px;
   top: 382px;
 
   border: 0.5px solid $black;
   box-sizing: border-box;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-error-message {
+  width: $input-width;
+  color: $red;
 }
 
 .button {
