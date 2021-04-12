@@ -57,13 +57,13 @@ export const LoginForm = ({ onSubmit }) => {
   return (
     <div className="form-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        {status === REJECTED && <strong>{error}</strong>}
+        {status === REJECTED && <strong className="error">{error}</strong>}
         <div>
           <Input
             name="email"
             type="email"
             className="input-text"
-            label={<p className="label">{intl.formatMessage(messages.email).toUpperCase()}</p>}
+            label={intl.formatMessage(messages.email).toUpperCase()}
             {...inputProps(fields.email)}
           />
         </div>
@@ -72,7 +72,7 @@ export const LoginForm = ({ onSubmit }) => {
             name="password"
             type="password"
             className="input-text"
-            label={<p className="label">{intl.formatMessage(messages.password).toUpperCase()}</p>}
+            label={intl.formatMessage(messages.password).toUpperCase()}
             {...inputProps(fields.password)}
           />
         </div>

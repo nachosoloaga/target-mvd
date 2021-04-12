@@ -1,7 +1,7 @@
-@use 'src/styles/_variables';
+@import 'src/styles/_variables';
 
 .social-media-container {
-  background: variables.$blue;
+  background: $blue;
   position: absolute;
   right: 0rem;
   width: 50%;
