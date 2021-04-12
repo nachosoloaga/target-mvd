@@ -5,6 +5,7 @@ export default {
   'login.form.email': 'Email',
   'login.form.password': 'Password',
   'login.form.submit': 'Submit',
+  'login.form.facebook': 'Connect with Facebook',
 
   'login.forgot_password': 'Forgot your password?',
 
@@ -15,6 +16,11 @@ export default {
   'logout.button': 'LOGOUT',
 
   'home.welcome': 'Welcome to Target MVD {email}',
+
+  // general
+  'app.legend': 'Find people near you & Connect',
+  'app.info': `Create a target wherever on the map, specify your interest: Travel, Dating, Music, etc
+  and start conecting with others who share your interest.`,
 
   // errors
   'email.presence': 'You must enter an email to continue',
