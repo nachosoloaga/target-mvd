@@ -48,7 +48,7 @@ const LoginPage = () => {
             <FormattedMessage id="login.form.facebook" />
           </a>
           <hr />
-          <a href="#">
+          <a id="sign-up-link" href="/sign-up">
             <FormattedMessage id="signup.title" />
           </a>
         </div>

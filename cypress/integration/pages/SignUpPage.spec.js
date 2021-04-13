@@ -25,7 +25,7 @@ describe('Sign Up Page', () => {
 
   context('General', () => {
     it('Should see the sign up page', () => {
-      cy.get('p').contains('SIGN UP');
+      cy.get('h2').contains('SIGN UP');
     });
 
     it('Should see a link to the login page', () => {
@@ -34,8 +34,8 @@ describe('Sign Up Page', () => {
         .contains('Sign in');
     });
 
-    it('Click in the sign up link, should be redirected to the login page', () => {
-      cy.get('a')
+    it('Click in the sign in link, should be redirected to the login page', () => {
+      cy.get('[id=sign-in-link]')
         .should('have.attr', 'href', routes.login)
         .click();
       cy.url().should('match', /login/);

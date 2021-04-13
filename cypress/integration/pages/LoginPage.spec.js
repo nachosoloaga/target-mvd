@@ -32,17 +32,17 @@ describe('Login Page (Real Response)', () => {
     });
 
     it('Should see the login page', () => {
-      cy.get('p').contains('LOGIN');
+      cy.get('h1').contains('TARGET MVD');
     });
 
     it('Should see a link to the sign up page', () => {
-      cy.get('a')
+      cy.get('[id=sign-up-link')
         .should('have.attr', 'href', routes.signUp)
-        .contains('Sign up');
+        .contains('SIGN UP');
     });
 
     it('Clicking the sign up link, should be redirected to the sign up page', () => {
-      cy.get('a')
+      cy.get('[id=sign-up-link]')
         .should('have.attr', 'href', routes.signUp)
         .click();
       cy.url().should('match', /sign-up/);

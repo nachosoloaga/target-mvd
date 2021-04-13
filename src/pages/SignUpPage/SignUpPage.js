@@ -23,7 +23,13 @@ const SignUpPage = () => {
       <h2>
         <FormattedMessage id="signup.title" />
       </h2>
-      <SignUpForm onSubmit={signUpRequest} />
+      <div className="sign-up-form-container">
+        <SignUpForm onSubmit={signUpRequest} />
+        <hr />
+        <a id="sign-in-link" href="/login">
+          <FormattedMessage id="signup.signin" />
+        </a>
+      </div>
       <SocialMediaContainer />
     </div>
   );
