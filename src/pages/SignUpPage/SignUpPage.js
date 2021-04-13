@@ -1,11 +1,14 @@
 import React, { memo } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 import { useSession, useDispatch } from 'hooks';
 import { signUp } from 'state/actions/userActions';
-import SignUpForm from 'components/user/SignUpForm';
+import SignUpForm from 'components/user/SignUpForm/SignUpForm';
+import SocialMediaContainer from 'components/common/SocialMediaContainer/SocialMediaContainer';
 import routes from 'constants/routesPaths';
+
+import './sign-up-page.scss';
 
 const SignUpPage = () => {
   const { authenticated } = useSession();
@@ -16,14 +19,12 @@ const SignUpPage = () => {
   }
 
   return (
-    <div>
-      <p>
+    <div className="sign-up-page-container">
+      <h2>
         <FormattedMessage id="signup.title" />
-      </p>
+      </h2>
       <SignUpForm onSubmit={signUpRequest} />
-      <Link to={routes.login}>
-        <FormattedMessage id="signup.signin" />
-      </Link>
+      <SocialMediaContainer />
     </div>
   );
 };
