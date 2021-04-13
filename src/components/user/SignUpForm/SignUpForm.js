@@ -10,6 +10,7 @@ import SelectInput from 'components/common/SelectInput';
 import { signUp as signUpValidations } from 'utils/constraints';
 import { useStatus, useForm, useValidation, useTextInputProps } from 'hooks';
 import { signUp } from 'state/actions/userActions';
+import genderOptions from 'constants/genderOptions';
 
 import './sign-up-form.scss';
 
@@ -65,7 +66,7 @@ export const SignUpForm = ({ onSubmit }) => {
   return (
     <div className="signup-form-container">
       <form className="sign-up-form" onSubmit={handleSubmit}>
-        {status === REJECTED && <strong>{error}</strong>}
+        {status === REJECTED && <strong className="error">{error}</strong>}
         <div>
           <Input
             name="email"
@@ -89,6 +90,7 @@ export const SignUpForm = ({ onSubmit }) => {
             name="gender"
             className="input-text"
             label={intl.formatMessage(messages.gender).toUpperCase()}
+            options={genderOptions}
             {...inputProps(fields.gender)}
           />
         </div>

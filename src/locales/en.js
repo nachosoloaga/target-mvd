@@ -24,6 +24,12 @@ export default {
   'app.info': `Create a target wherever on the map, specify your interest: Travel, Dating, Music, etc
   and start conecting with others who share your interest.`,
 
+  // common
+  'common.gender.male': 'Male',
+  'common.gender.female': 'Female',
+  'common.gender.other': 'Other',
+  'common.select.default': 'Select an option',
+
   // errors
   'email.presence': 'You must enter an email to continue',
   'email.invalid': 'You must enter a valid email',

@@ -28,6 +28,13 @@ export default {
   'app.info': `Crea un objetivo en cualquier parte del mapa, indica tu interés: Travel, Dating, Music, etc
   y empieza a conectar con personas que lo comparten.`,
 
+  // common
+
+  'common.gender.male': 'Masculino',
+  'common.gender.female': 'Femenino',
+  'common.gender.other': 'Otro',
+  'common.select.default': 'Seleccione una opción',
+
   // errors
   'email.presence': 'Debe ingresar un email para continuar',
   'email.invalid': 'Debe ingresar un email válido',
