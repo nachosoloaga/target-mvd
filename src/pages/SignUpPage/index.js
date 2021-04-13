@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 import { useSession, useDispatch } from 'hooks';
@@ -7,6 +7,8 @@ import { signUp } from 'state/actions/userActions';
 import SignUpForm from 'components/user/SignUpForm';
 import SocialMediaContainer from 'components/common/SocialMediaContainer';
 import routes from 'constants/routesPaths';
+
+import './sign-up-page.scss';
 
 const SignUpPage = () => {
   const { authenticated } = useSession();
