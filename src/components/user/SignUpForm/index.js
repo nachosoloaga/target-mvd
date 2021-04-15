@@ -12,8 +12,6 @@ import { useStatus, useForm, useValidation, useTextInputProps } from 'hooks';
 import { signUp } from 'state/actions/userActions';
 import genderOptions from 'constants/genderOptions';
 
-import './sign-up-form.scss';
-
 const messages = defineMessages({
   email: { id: 'login.form.email' },
   gender: { id: 'signup.form.gender' },
