@@ -7,12 +7,10 @@ import { login } from 'state/actions/userActions';
 import routes from 'constants/routesPaths';
 import { APP_TITLE } from 'constants/constants';
 
-import LoginForm from 'components/user/LoginForm/LoginForm';
-import SocialMediaContainer from 'components/common/SocialMediaContainer/SocialMediaContainer';
+import LoginForm from 'components/user/LoginForm';
+import SocialMediaContainer from 'components/common/SocialMediaContainer';
 
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
-
-import './login-page.scss';
 
 const LoginPage = () => {
   const { authenticated } = useSession();

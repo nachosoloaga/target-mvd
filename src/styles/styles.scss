@@ -1,6 +1,11 @@
 @import 'variables';
 @import '~loaders.css/src/animations/ball-scale-multiple';
 
+@import '../components/common/SocialMediaContainer/social-media-container.scss';
+@import '../components/user/LoginForm/login-form.scss';
+
+@import '../pages/LoginPage/login-page.scss';
+
 html,
 body {
   min-height: 100vh;

@@ -1,5 +1,3 @@
-@import 'src/styles/_variables';
-
 .social-media-container {
   background: $blue;
   position: absolute;
@@ -17,7 +15,10 @@
 
 .social-links-container {
   position: absolute;
+  width: 5rem;
   bottom: 6.25rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .iphone-container {
