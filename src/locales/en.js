@@ -11,7 +11,9 @@ export default {
 
   'signup.title': 'SIGN UP',
   'signup.signin': 'Sign in',
-  'signup.form.passconfirmation': 'Password confirmation',
+  'signup.form.gender': 'Gender',
+  'signup.form.username': 'Username',
+  'signup.form.passconfirmation': 'Confirm password',
 
   'logout.button': 'LOGOUT',
 
@@ -21,6 +23,12 @@ export default {
   'app.legend': 'Find people near you & Connect',
   'app.info': `Create a target wherever on the map, specify your interest: Travel, Dating, Music, etc
   and start conecting with others who share your interest.`,
+
+  // common
+  'common.gender.male': 'Male',
+  'common.gender.female': 'Female',
+  'common.gender.other': 'Other',
+  'common.select.default': 'Select an option',
 
   // errors
   'email.presence': 'You must enter an email to continue',
