@@ -1,7 +1,8 @@
 .social-media-container {
   background: $blue;
   position: absolute;
-  right: 0rem;
+  right: 0;
+  top: 0;
   width: 50%;
   min-height: 100%;
   display: flex;
@@ -11,12 +12,14 @@
 .app-store-container {
   position: absolute;
   bottom: 9.375rem;
+  left: 19rem;
 }
 
 .social-links-container {
   position: absolute;
   width: 5rem;
   bottom: 6.25rem;
+  left: 20.25rem;
   display: flex;
   justify-content: space-between;
 }

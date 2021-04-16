@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import { useSession, useDispatch } from 'hooks';
 import { signUp } from 'state/actions/userActions';
 import SignUpForm from 'components/user/SignUpForm';
+import SocialMediaContainer from 'components/common/SocialMediaContainer';
 import routes from 'constants/routesPaths';
 
 const SignUpPage = () => {
@@ -16,14 +17,18 @@ const SignUpPage = () => {
   }
 
   return (
-    <div>
-      <p>
+    <div className="sign-up-page-container">
+      <h2>
         <FormattedMessage id="signup.title" />
-      </p>
-      <SignUpForm onSubmit={signUpRequest} />
-      <Link to={routes.login}>
-        <FormattedMessage id="signup.signin" />
-      </Link>
+      </h2>
+      <div className="sign-up-form-container">
+        <SignUpForm onSubmit={signUpRequest} />
+        <hr />
+        <Link to="/login" className="link" id="sign-in-link">
+          <FormattedMessage id="signup.signin" />
+        </Link>
+      </div>
+      <SocialMediaContainer />
     </div>
   );
 };

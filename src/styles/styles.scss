@@ -3,8 +3,10 @@
 
 @import '../components/common/SocialMediaContainer/social-media-container.scss';
 @import '../components/user/LoginForm/login-form.scss';
+@import '../components/user/SignUpForm/sign-up-form.scss';
 
 @import '../pages/LoginPage/login-page.scss';
+@import '../pages/SignUpPage/sign-up-page.scss';
 
 html,
 body {
@@ -51,7 +53,7 @@ body {
   left: 257px;
   top: 520px;
 
-  margin-top: 3%;
+  margin-top: 0.5rem;
   color: $white;
 
   background: $black;
@@ -84,8 +86,8 @@ body {
   font-size: 14px;
   line-height: 15px;
 
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-bottom: 0.6rem;
+  margin-top: 0.6rem;
   text-align: center;
   color: $black;
 }
