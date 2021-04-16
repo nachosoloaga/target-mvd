@@ -5,11 +5,9 @@ export default {
   'login.form.email': 'Email',
   'login.form.password': 'Contraseña',
   'login.form.submit': 'Continuar',
+  'login.form.facebook': 'Conectar con Facebook',
 
   'login.forgot_password': '¿Olvidó su contraseña?',
-  'login.form.email.presence': 'Debe ingresar un email para continuar',
-  'login.form.email.invalid': 'Debe ingresar un email válido',
-  'login.form.password.presence': 'Debe ingresar una contraseña para continuar',
 
   'signup.title': 'REGISTRARSE',
   'signup.signin': 'Iniciar Sesión',
@@ -21,6 +19,12 @@ export default {
   'logout.button': 'LOGOUT',
 
   'home.welcome': 'Bienvenido a Target MVD {username}',
+
+  // general
+
+  'app.legend': 'Encuentra gente cerca y conecta',
+  'app.info': `Crea un objetivo en cualquier parte del mapa, indica tu interés: Travel, Dating, Music, etc
+  y empieza a conectar con personas que lo comparten.`,
 
   // errors
   'email.presence': 'Debe ingresar un email para continuar',

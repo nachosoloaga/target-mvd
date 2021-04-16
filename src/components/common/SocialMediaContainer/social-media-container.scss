@@ -1,0 +1,26 @@
+.social-media-container {
+  background: $blue;
+  position: absolute;
+  right: 0rem;
+  width: 50%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-store-container {
+  position: absolute;
+  bottom: 9.375rem;
+}
+
+.social-links-container {
+  position: absolute;
+  width: 5rem;
+  bottom: 6.25rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.iphone-container {
+  position: absolute;
+}
