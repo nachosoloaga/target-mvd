@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 import { useSession, useDispatch } from 'hooks';
@@ -39,18 +39,18 @@ const LoginPage = () => {
       <LoginForm onSubmit={loginRequest} />
       <div className="links-container">
         <div className="recover-password">
-          <a href="#">
+          <Link to="#">
             <FormattedMessage id="login.forgot_password" />
-          </a>
+          </Link>
         </div>
         <div className="login-links">
-          <a href="#" id="facebook-login">
+          <Link to="#" id="facebook-login">
             <FormattedMessage id="login.form.facebook" />
-          </a>
+          </Link>
           <hr />
-          <a id="sign-up-link" href="/sign-up">
+          <Link to="/sign-up" id="sign-up-link">
             <FormattedMessage id="signup.title" />
-          </a>
+          </Link>
         </div>
       </div>
       <SocialMediaContainer />

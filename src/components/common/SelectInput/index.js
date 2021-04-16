@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { arrayOf, bool, func, string } from 'prop-types';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import { parseInputErrors } from 'utils/helpers';
-import '../../styles/_variables.scss';
+import Option from './Option';
+
+import '../../../styles/_variables.scss';
 
 const SelectInput = ({
   label,
@@ -22,8 +24,6 @@ const SelectInput = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const intl = useIntl();
-
   return (
     <div>
       <div className="input-container">
@@ -34,11 +34,7 @@ const SelectInput = ({
         )}
         <select name={name} value={value} onChange={onChange} {...props}>
           {options.map(opt => {
-            return (
-              <option key={opt.id} value={opt.value}>
-                {intl.formatMessage({ id: opt.id })}
-              </option>
-            );
+            return <Option key={opt.id} option={opt} />;
           })}
         </select>
         {touched && errors && (

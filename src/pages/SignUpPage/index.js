@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 import { useSession, useDispatch } from 'hooks';
@@ -24,9 +24,9 @@ const SignUpPage = () => {
       <div className="sign-up-form-container">
         <SignUpForm onSubmit={signUpRequest} />
         <hr />
-        <a id="sign-in-link" href="/login">
+        <Link to="/login" className="link" id="sign-in-link">
           <FormattedMessage id="signup.signin" />
-        </a>
+        </Link>
       </div>
       <SocialMediaContainer />
     </div>
