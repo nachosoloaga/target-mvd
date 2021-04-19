@@ -8,8 +8,6 @@ import routes from 'constants/routesPaths';
 import { APP_TITLE } from 'constants/constants';
 
 import LoginForm from 'components/user/LoginForm';
-import SocialMediaContainer from 'components/common/SocialMediaContainer';
-import Menu from 'components/common/HamburgerMenu';
 
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
 
@@ -23,7 +21,6 @@ const LoginPage = () => {
 
   return (
     <div className="login-page-container">
-      <Menu />
       <div className="info-text-container">
         <Smilies />
         <div className="info-text">
@@ -55,7 +52,6 @@ const LoginPage = () => {
           </Link>
         </div>
       </div>
-      <SocialMediaContainer />
     </div>
   );
 };

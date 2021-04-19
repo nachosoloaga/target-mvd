@@ -1,14 +1,14 @@
 import React from 'react';
-import { Switch, BrowserRouter } from 'react-router-dom';
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import { useSession } from 'hooks';
-import RouteFromPath from 'components/routes/RouteFromPath';
-import routes from '../routes';
+// import { useSession } from 'hooks';
 import { APP_TITLE } from '../constants/constants';
+import GuestLayout from './common/Layout/GuestLayout';
+import LoginPage from '../pages/LoginPage';
 
 const App = () => {
-  const { authenticated } = useSession();
+  // const { authenticated } = useSession();
 
   return (
     <>
@@ -16,11 +16,11 @@ const App = () => {
         <title>{APP_TITLE}</title>
       </Helmet>
       <BrowserRouter>
-        <Switch>
-          {routes.map((route, index) => (
-            <RouteFromPath key={`route${index}`} {...route} authenticated={authenticated} />
-          ))}
-        </Switch>
+        <GuestLayout>
+          <Switch>
+            <Route path="/login" component={LoginPage} />
+          </Switch>
+        </GuestLayout>
       </BrowserRouter>
     </>
   );
