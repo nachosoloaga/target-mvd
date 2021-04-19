@@ -15,7 +15,7 @@ export default {
   'signup.form.username': 'Username',
   'signup.form.passconfirmation': 'Confirm password',
 
-  'logout.button': 'LOGOUT',
+  'logout.button': 'Logout',
 
   'home.welcome': 'Welcome to Target MVD {email}',
 

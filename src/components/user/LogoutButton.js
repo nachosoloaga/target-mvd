@@ -8,9 +8,9 @@ const LogoutButton = () => {
   const logoutRequest = useDispatch(logout);
 
   return (
-    <button onClick={logoutRequest} type="button">
+    <a style={{ cursor: 'pointer' }} onClick={logoutRequest}>
       <FormattedMessage id="logout.button" />
-    </button>
+    </a>
   );
 };
 

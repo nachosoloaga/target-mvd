@@ -18,7 +18,7 @@ export default {
   'signup.form.confirmation.equality':
     'Su confirmación de contraseña debe ser igual a la contraseña',
 
-  'logout.button': 'LOGOUT',
+  'logout.button': 'Cerrar sesión',
 
   'home.welcome': 'Bienvenido a Target MVD {username}',
 
