@@ -6,9 +6,8 @@ import { useSession, useDispatch } from 'hooks';
 import { signUp } from 'state/actions/userActions';
 import SignUpForm from 'components/user/SignUpForm';
 import SocialMediaContainer from 'components/common/SocialMediaContainer';
+import Menu from 'components/common/HamburgerMenu';
 import routes from 'constants/routesPaths';
-
-import './sign-up-page.scss';
 
 const SignUpPage = () => {
   const { authenticated } = useSession();
@@ -20,10 +19,11 @@ const SignUpPage = () => {
 
   return (
     <div className="sign-up-page-container">
-      <h2>
-        <FormattedMessage id="signup.title" />
-      </h2>
+      <Menu />
       <div className="sign-up-form-container">
+        <h2>
+          <FormattedMessage id="signup.title" />
+        </h2>
         <SignUpForm onSubmit={signUpRequest} />
         <hr />
         <Link to="/login" className="link" id="sign-in-link">

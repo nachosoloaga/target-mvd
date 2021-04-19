@@ -35,6 +35,7 @@ export default {
   'common.gender.other': 'Otro',
   'common.select.default': 'Seleccione una opción',
   'common.about': 'Acerca de',
+  'common.contact': 'Contacto',
 
   // errors
   'email.presence': 'Debe ingresar un email para continuar',

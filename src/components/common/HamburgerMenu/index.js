@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useIntl } from 'react-intl';
-import useSession from 'hooks/useSession';
 import HamburgerMenu from 'react-hamburger-menu';
-import './hamburger-menu.scss';
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
-  const { authenticated } = useSession();
   const intl = useIntl();
 
   return (
@@ -15,7 +13,7 @@ const Menu = () => {
         isOpen={open}
         menuClicked={() => setOpen(!open)}
         className="hamburger-icon"
-        width={18}
+        width={20}
         height={15}
         strokeWidth={1}
         rotate={0}
@@ -27,14 +25,12 @@ const Menu = () => {
       {open && (
         <div className="menu">
           <ul>
-            {!authenticated && (
-              <li>
-                <a href="/sign-up">{intl.formatMessage({ id: 'login.signup' })}</a>
-              </li>
-            )}
+            <li>
+              <Link to="about">{intl.formatMessage({ id: 'common.about' })}</Link>
+            </li>
 
             <li>
-              <a href="#">{intl.formatMessage({ id: 'common.about' })}</a>
+              <Link to="contact">{intl.formatMessage({ id: 'common.contact' })}</Link>
             </li>
           </ul>
         </div>

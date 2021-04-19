@@ -30,6 +30,7 @@ export default {
   'common.gender.other': 'Other',
   'common.select.default': 'Select an option',
   'common.about': 'About',
+  'common.contact': 'Contact',
 
   // errors
   'email.presence': 'You must enter an email to continue',

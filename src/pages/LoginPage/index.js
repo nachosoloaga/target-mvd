@@ -9,7 +9,7 @@ import { APP_TITLE } from 'constants/constants';
 
 import LoginForm from 'components/user/LoginForm';
 import SocialMediaContainer from 'components/common/SocialMediaContainer';
-import Menu from 'components/common/HamburgerMenu/HamburgerMenu';
+import Menu from 'components/common/HamburgerMenu';
 
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
 
