@@ -38,6 +38,7 @@ export default {
   'common.select.default': 'Seleccione una opción',
   'common.about': 'Acerca de',
   'common.contact': 'Contacto',
+  'common.understand.button': 'Ok, lo entiendo',
 
   // errors
   'email.presence': 'Debe ingresar un email para continuar',

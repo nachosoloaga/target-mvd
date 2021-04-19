@@ -19,12 +19,6 @@
     font-size: 20px;
   }
 
-  h2 {
-    font-weight: 600;
-    font-size: 18px;
-    margin-top: 0;
-  }
-
   .info-text {
     display: flex;
     flex-direction: column;
@@ -41,6 +35,12 @@
     p {
       width: 70%;
       margin-top: 3rem;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 0;
     }
   }
 

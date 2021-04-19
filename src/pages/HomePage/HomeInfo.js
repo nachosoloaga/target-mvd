@@ -1,8 +1,9 @@
 import React from 'react';
-import { APP_TITLE } from 'constants/constants';
-import Menu from 'components/common/HamburgerMenu';
-import { ReactComponent as Smilies } from 'assets/smilies.svg';
 import { FormattedMessage } from 'react-intl';
+
+import { APP_TITLE } from 'constants/constants';
+import { ReactComponent as Smilies } from 'assets/smilies.svg';
+import Menu from 'components/common/HamburgerMenu';
 import Point from 'assets/point.png';
 
 const HomeInfo = () => {
@@ -27,7 +28,7 @@ const HomeInfo = () => {
             </p>
           </div>
           <button type="button" className="button">
-            OK; GOT IT
+            <FormattedMessage id="common.understand.button" />
           </button>
         </div>
       </div>
