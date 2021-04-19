@@ -25,10 +25,12 @@ export default {
   // general
 
   'app.legend': 'Encuentra gente cerca y conecta',
-  'app.info': `Crea un objetivo en cualquier parte del mapa, indica tu interés: Travel, Dating, Music, etc
-  y empieza a conectar con personas que lo comparten.`,
-  'app.welcome.item1': `Crea un objetivo haciendo click en cualquier parte del mapa, indica el área y una temática: Travel, Dating, Music, etc.`,
-  'app.welcome.item2': `TARGET comenzará un chat cuando tengas un match. Siempre puedes eliminar rechazar la conversación si no estas interesado/a.`,
+  'app.info':
+    'Crea un objetivo en cualquier parte del mapa, indica tu interés: Travel, Dating, Music, etc y empieza a conectar con personas que lo comparten.',
+  'app.welcome.item1':
+    'Crea un objetivo haciendo click en cualquier parte del mapa, indica el área y una temática: Travel, Dating, Music, etc.',
+  'app.welcome.item2':
+    'TARGET comenzará un chat cuando tengas un match. Siempre puedes eliminar rechazar la conversación si no estas interesado/a.',
 
   // common
 

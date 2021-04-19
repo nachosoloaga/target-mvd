@@ -21,12 +21,12 @@ export default {
 
   // general
   'app.legend': 'Find people near you & Connect',
-  'app.info': `Create a target wherever on the map, specify your interest: Travel, Dating, Music, etc
-  and start conecting with others who share your interest.`,
-  'app.welcome.item1': `Create a target by clicking wherever on the map, specify the ratio and
-  a topic: Travel, Dating, Music, etc.`,
-  'app.welcome.item2': `TARGET will start a chat whenever you’ve a match. You can always dismiss a
-  conversation if you’re not interested.`,
+  'app.info':
+    'Create a target wherever on the map, specify your interest: Travel, Dating, Music, etc and start conecting with others who share your interest.',
+  'app.welcome.item1':
+    'Create a target by clicking wherever on the map, specify the ratio and a topic: Travel, Dating, Music, etc.',
+  'app.welcome.item2':
+    'TARGET will start a chat whenever you’ve a match. You can always dismiss a conversation if you’re not interested.',
 
   // common
   'common.gender.male': 'Male',

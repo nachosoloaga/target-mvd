@@ -8,7 +8,7 @@ const LogoutButton = () => {
   const logoutRequest = useDispatch(logout);
 
   return (
-    <a style={{ cursor: 'pointer' }} onClick={logoutRequest}>
+    <a className="cursor-pointer" onClick={logoutRequest}>
       <FormattedMessage id="logout.button" />
     </a>
   );

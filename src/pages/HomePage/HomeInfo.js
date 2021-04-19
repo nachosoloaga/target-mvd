@@ -19,11 +19,11 @@ const HomeInfo = () => {
               <FormattedMessage id="app.legend" />
             </h2>
             <p>
-              <img style={{ marginRight: '0.5rem' }} src={Point} alt="Point" />
+              <img className="blue-point" src={Point} alt="Point" />
               <FormattedMessage id="app.welcome.item1" />
             </p>
             <p>
-              <img style={{ marginRight: '0.5rem' }} src={Point} alt="Point" />
+              <img className="blue-point" src={Point} alt="Point" />
               <FormattedMessage id="app.welcome.item2" />
             </p>
           </div>
