@@ -4,13 +4,11 @@ import { Route, Redirect, useLocation } from 'react-router-dom';
 
 import routes from 'constants/routesPaths';
 
-const PrivateRoute = ({ children, exact = false, path, authenticated }) => {
+const PrivateRoute = ({ component, exact = false, path, authenticated }) => {
   const location = useLocation();
 
   return authenticated ? (
-    <Route exact={exact} path={path}>
-      {children}
-    </Route>
+    <Route exact={exact} path={path} component={component} />
   ) : (
     <Redirect
       to={{
@@ -22,7 +20,7 @@ const PrivateRoute = ({ children, exact = false, path, authenticated }) => {
 };
 
 PrivateRoute.propTypes = {
-  children: node.isRequired,
+  component: node.isRequired,
   path: string.isRequired,
   authenticated: bool.isRequired,
   exact: bool
