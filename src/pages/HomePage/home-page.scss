@@ -30,11 +30,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .welcome-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     p {
-      width: 50%;
-      text-align: center;
-      margin-top: 0;
+      width: 70%;
+      margin-top: 3rem;
     }
+  }
+
+  button {
+    margin-top: 25%;
   }
 }
