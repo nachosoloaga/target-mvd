@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import HamburgerMenu from 'react-hamburger-menu';
+import { useSession } from 'hooks';
+import LogoutButton from 'components/user/LogoutButton';
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
   const intl = useIntl();
+  const { authenticated } = useSession();
 
   return (
     <>
@@ -32,6 +35,12 @@ const Menu = () => {
             <li>
               <Link to="contact">{intl.formatMessage({ id: 'common.contact' })}</Link>
             </li>
+
+            {authenticated && (
+              <li>
+                <LogoutButton />
+              </li>
+            )}
           </ul>
         </div>
       )}

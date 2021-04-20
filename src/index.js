@@ -14,6 +14,7 @@ import App from 'components/App';
 import locales from 'locales';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from 'constants/constants';
 import 'styles/styles.scss';
+import 'leaflet/dist/leaflet.css';
 
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 
