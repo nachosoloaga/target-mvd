@@ -20,7 +20,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="login-page-container">
+    <div className="page-container">
       <div className="info-text-container">
         <Smilies />
         <div className="info-text">
