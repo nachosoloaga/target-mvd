@@ -36,6 +36,7 @@ export default {
   'common.about': 'About',
   'common.contact': 'Contact',
   'common.understand.button': 'Ok, got it',
+  'common.geo.confirm': 'Allow the application to use your current location',
 
   // errors
   'email.presence': 'You must enter an email to continue',

@@ -41,6 +41,7 @@ export default {
   'common.about': 'Acerca de',
   'common.contact': 'Contacto',
   'common.understand.button': 'Ok, lo entiendo',
+  'common.geo.confirm': 'Permitir a la aplicación utilizar su ubicación actual',
 
   // errors
   'email.presence': 'Debe ingresar un email para continuar',
