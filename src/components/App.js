@@ -3,13 +3,11 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import { useSession } from 'hooks';
-import SignUpPage from 'pages/SignUpPage';
-import HomePage from 'pages/HomePage';
-import { APP_TITLE } from '../constants/constants';
 
-import PrivateRoute from './routes/PrivateRoute';
-import LoginPage from '../pages/LoginPage';
+import GuestSwitch from './routes/GuestSwitch';
+import PrivateSwitch from './routes/PrivateSwitch';
 import GuestLayout from './common/Layout/GuestLayout';
+import { APP_TITLE } from '../constants/constants';
 
 const App = () => {
   const { authenticated } = useSession();
@@ -21,12 +19,15 @@ const App = () => {
       </Helmet>
       <BrowserRouter>
         <Switch>
-          <GuestLayout>
-            <Route path="/login" component={LoginPage} />
-            <Route path="/sign-up" component={SignUpPage} />
-          </GuestLayout>
+          <Route path={['/login', '/sign-up']}>
+            <GuestLayout>
+              <GuestSwitch />
+            </GuestLayout>
+          </Route>
 
-          <PrivateRoute path="/" component={HomePage} authenticated={authenticated} />
+          <Route path="/*">
+            <PrivateSwitch authenticated={authenticated} />
+          </Route>
         </Switch>
       </BrowserRouter>
     </>

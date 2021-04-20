@@ -1,5 +1,5 @@
-import React from 'react';
-import { ReactComponentLike } from 'prop-types';
+import React, { memo } from 'react';
+import { node } from 'prop-types';
 
 import Menu from '../../HamburgerMenu';
 import SocialMediaContainer from '../../SocialMediaContainer';
@@ -15,7 +15,7 @@ const GuestLayout = ({ children }) => {
 };
 
 GuestLayout.propTypes = {
-  children: ReactComponentLike
+  children: node.isRequired
 };
 
-export default GuestLayout;
+export default memo(GuestLayout);

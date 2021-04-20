@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { memo } from 'react';
 import Map from 'components/common/Map';
 import HomeInfo from './HomeInfo';
 
@@ -12,4 +11,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default memo(HomePage);
