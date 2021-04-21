@@ -1,11 +1,11 @@
 import { useHistory } from 'react-router-dom';
 import { useMapEvents } from 'react-leaflet';
-import { updateNewTargetCoords } from '../../../../state/actions/targetActions';
+import { setNewTargetCoords } from '../../../../state/actions/targetActions';
 import useDispatch from '../../../../hooks/useDispatch';
 
 const NewTarget = () => {
   const history = useHistory();
-  const updateCoordinates = useDispatch(updateNewTargetCoords);
+  const updateCoordinates = useDispatch(setNewTargetCoords);
 
   useMapEvents({
     click(e) {

@@ -1,3 +1,3 @@
 import { createAction } from '@reduxjs/toolkit';
 
-export const updateNewTargetCoords = createAction('target/updateCoords');
+export const setNewTargetCoords = createAction('target/updateCoords');
