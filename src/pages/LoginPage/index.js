@@ -16,7 +16,7 @@ const LoginPage = () => {
   const loginRequest = useDispatch(login);
 
   if (authenticated) {
-    return <Redirect to={routes.index} />;
+    return <Redirect to={routes.welcome} />;
   }
 
   return (

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useIntl } from 'react-intl';
 
 import Map from 'components/common/Map';
-import { node, func, oneOfType } from 'prop-types';
 
-const HomePage = ({ children }) => {
+const HomePage = () => {
   const [position, setPosition] = useState({ x: 51, y: -1 });
+  const intl = useIntl();
 
   useEffect(() => {
     if (position.x === 51 && position.y === -1) {
@@ -12,18 +13,14 @@ const HomePage = ({ children }) => {
         setPosition({ x: pos.coords.latitude, y: pos.coords.longitude })
       );
     }
-  }, [position]);
+  }, [position, intl]);
 
   return (
     <div className="home-container">
-      {children}
+      <HomeInfo />
       <Map position={position} />
     </div>
   );
-};
-
-HomePage.propTypes = {
-  children: oneOfType(func, node).isRequired
 };
 
 export default HomePage;
