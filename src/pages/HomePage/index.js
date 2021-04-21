@@ -10,11 +10,9 @@ const HomePage = () => {
 
   useEffect(() => {
     if (position.x === 51 && position.y === -1) {
-      if (window.confirm(intl.formatMessage({ id: 'common.geo.confirm' }))) {
-        navigator.geolocation.getCurrentPosition(pos =>
-          setPosition({ x: pos.coords.latitude, y: pos.coords.longitude })
-        );
-      }
+      navigator.geolocation.getCurrentPosition(pos =>
+        setPosition({ x: pos.coords.latitude, y: pos.coords.longitude })
+      );
     }
   }, [position, intl]);
 
