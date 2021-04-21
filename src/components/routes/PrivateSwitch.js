@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import { bool } from 'prop-types';
 
+import CreateTargetForm from 'components/common/Home/CreateTargetForm';
 import PrivateRoute from './PrivateRoute';
 import HomePage from '../../pages/HomePage';
 import HomeInfo from '../../pages/HomePage/HomeInfo';
@@ -11,8 +12,14 @@ const PrivateSwitch = ({ authenticated }) => {
   return (
     <Switch>
       <HomePage>
-        <PrivateRoute path="/welcome" component={HomeInfo} authenticated={authenticated} />
-        <PrivateRoute path="/targets/new" component={Landing} authenticated={authenticated} />
+        <PrivateRoute exact path="/welcome" component={HomeInfo} authenticated={authenticated} />
+        <PrivateRoute
+          exact
+          path="/targets/new"
+          component={CreateTargetForm}
+          authenticated={authenticated}
+        />
+        <PrivateRoute exact path="/" component={Landing} authenticated={authenticated} />
       </HomePage>
     </Switch>
   );

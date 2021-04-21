@@ -30,7 +30,7 @@ const HomeInfo = () => {
               <FormattedMessage id="app.welcome.item2" />
             </p>
           </div>
-          <button type="button" className="button" onClick={() => history.push('/targets/new')}>
+          <button type="button" className="button" onClick={() => history.push('/')}>
             <FormattedMessage id="common.understand.button" />
           </button>
         </div>

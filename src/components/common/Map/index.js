@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { object } from 'prop-types';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import NewTarget from './NewTarget';
 
 const UpdateCenter = ({ position }) => {
   const map = useMap();
@@ -25,6 +26,7 @@ const Map = ({ position }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <UpdateCenter position={position} />
+      <NewTarget />
     </MapContainer>
   );
 };

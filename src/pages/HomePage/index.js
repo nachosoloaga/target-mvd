@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import Map from 'components/common/Map';
-import { node, func, oneOfType } from 'prop-types';
 
 const HomePage = ({ children }) => {
   const [position, setPosition] = useState({ x: 51, y: -1 });
@@ -20,10 +19,6 @@ const HomePage = ({ children }) => {
       <Map position={position} />
     </div>
   );
-};
-
-HomePage.propTypes = {
-  children: oneOfType(func, node).isRequired
 };
 
 export default HomePage;
