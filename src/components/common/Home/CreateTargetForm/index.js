@@ -1,32 +1,32 @@
-import React, { useEffect } from 'react';
-import { useIntl, defineMessages, FormattedMessage } from 'react-intl';
+import React from 'react';
 
 import { REJECTED, PENDING } from 'constants/actionStatusConstants';
 
 import Loading from 'components/common/Loading';
 import Input from 'components/common/Input';
+import { createTarget } from 'state/actions/targetActions';
+import { createTarget as createTargetValidations } from 'utils/constraints';
 import {
   useValidation,
   useStatus,
   useTextInputProps,
   useForm,
+  useDispatch,
   useNewTarget
 } from '../../../../hooks';
 
-const messages = defineMessages({
-  email: { id: 'login.form.email' },
-  password: { id: 'login.form.password' }
-});
-
 const fields = {
-  email: 'email',
-  password: 'password'
+  title: 'title',
+  lat: 'lat',
+  lng: 'lng',
+  radius: 'radius'
 };
 
-const CreateTargetForm = ({ onSubmit }) => {
-  const target = useNewTarget();
-  const intl = useIntl();
-  const { status, error } = { status: 'ok', error: 'not' };
+const CreateTargetForm = () => {
+  const validator = useValidation(createTargetValidations);
+  const { status, error } = useStatus(createTarget);
+  const createTargetRequest = useDispatch(createTarget);
+  const newTarget = useNewTarget();
   const {
     values,
     errors,
@@ -38,10 +38,11 @@ const CreateTargetForm = ({ onSubmit }) => {
     touched
   } = useForm(
     {
-      onSubmit,
+      onSubmit: createTargetRequest,
+      validator,
       validateOnBlur: true
     },
-    [onSubmit]
+    [createTargetRequest]
   );
 
   const inputProps = useTextInputProps(
@@ -54,30 +55,46 @@ const CreateTargetForm = ({ onSubmit }) => {
     touched
   );
 
+  const latInputProps = inputProps(fields.lat);
+  const lngInputProps = inputProps(fields.lng);
+  [latInputProps.value, lngInputProps.value] = [...newTarget.coords];
+
   return (
     <div className="form-container">
       <form className="login-form" onSubmit={handleSubmit}>
         {status === REJECTED && <strong className="error">{error}</strong>}
         <div>
           <Input
-            name="email"
-            type="email"
+            name="title"
+            type="text"
             className="input-text"
-            label={intl.formatMessage(messages.email).toUpperCase()}
-            {...inputProps(fields.email)}
+            label="Titulo"
+            {...inputProps(fields.title)}
+          />
+        </div>
+        <div style={{ display: 'none' }}>
+          <Input name="lat" type="text" className="input-text" label="Latitud" {...latInputProps} />
+        </div>
+        <div style={{ display: 'none' }}>
+          <Input
+            name="lng"
+            type="text"
+            className="input-text"
+            label="Longitud"
+            {...lngInputProps}
           />
         </div>
         <div>
           <Input
-            name="password"
-            type="password"
+            name="radius"
+            type="number"
             className="input-text"
-            label={intl.formatMessage(messages.password).toUpperCase()}
-            {...inputProps(fields.password)}
+            label="Radio"
+            {...inputProps(fields.radius)}
           />
         </div>
         <button className="button" type="submit">
-          <FormattedMessage id="login.title" />
+          Crear
         </button>
         {status === PENDING && <Loading />}
       </form>
