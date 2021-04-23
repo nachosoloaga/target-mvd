@@ -50,6 +50,7 @@ export default {
   // errors
   'email.presence': 'You must enter an email to continue',
   'email.invalid': 'You must enter a valid email',
+  'title.presence': 'You must enter a title to continue',
   'password.presence': 'You must enter a password to continue',
   'passwordConfirmation.presence': 'You must enter a password confirmation to continue',
   'passwordConfirmation.equality': 'Your password confirmation must be equal to the password'
