@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { object } from 'prop-types';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
 import NewTarget from './NewTarget';
+import { icon } from './Icons';
 
 const UpdateCenter = ({ position }) => {
   const map = useMap();
@@ -14,6 +15,12 @@ const UpdateCenter = ({ position }) => {
 };
 
 const Map = ({ position }) => {
+  const [newTargetPos, setNewTargetPos] = useState([]);
+
+  const setNewMarker = coords => {
+    setNewTargetPos(coords);
+  };
+
   return (
     <MapContainer
       style={{ height: '100vh', width: '65%' }}
@@ -26,7 +33,8 @@ const Map = ({ position }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <UpdateCenter position={position} />
-      <NewTarget />
+      <NewTarget setNewMarker={setNewMarker} />
+      {newTargetPos.length != 0 && <Marker position={newTargetPos} icon={icon} />}
     </MapContainer>
   );
 };
