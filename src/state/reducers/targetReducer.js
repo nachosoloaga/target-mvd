@@ -1,18 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { setNewTargetCoords } from 'state/actions/targetActions';
+import { setNewTargetCoords, getTargetTopicsFulfilled } from 'state/actions/targetActions';
 
 const initialState = {
-  coords: []
+  coords: [],
+  topics: []
 };
 
-const sessionSlice = createSlice({
+const targetSlice = createSlice({
   name: 'target',
   initialState,
   extraReducers: {
     [setNewTargetCoords]: (state, { payload }) => {
       state.coords = payload;
+    },
+    [getTargetTopicsFulfilled]: (state, { payload }) => {
+      state.topics = payload.topics.map(t => t.topic);
     }
   }
 });
 
-export default sessionSlice.reducer;
+export default targetSlice.reducer;

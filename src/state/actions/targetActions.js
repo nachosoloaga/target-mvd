@@ -13,5 +13,18 @@ export const createTarget = createAsyncThunk('target/create', async target => {
   }
 });
 
+export const getTargetTopics = createAsyncThunk('target/getTopics', async () => {
+  try {
+    const { data } = await targetService.getTargetTopics();
+    return data;
+  } catch ({ response: { data } }) {
+    throw parseError(data);
+  }
+});
+
 export const { fulfilled: createTargetFulfilled, rejected: createTargetRejected } = createTarget;
+export const {
+  fulfilled: getTargetTopicsFulfilled,
+  rejected: getTargetTopicsRejected
+} = getTargetTopics;
 export const setNewTargetCoords = createAction('target/updateCoords');

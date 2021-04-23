@@ -1,9 +1,9 @@
 import humps from 'humps';
 import { updateSession, logout } from 'state/actions/userActions';
 
-const ACCESS_TOKEN = 'access-token';
-const UID = 'uid';
-const CLIENT = 'client';
+const ACCESS_TOKEN = 'Access-Token';
+const UID = 'Uid';
+const CLIENT = 'Client';
 
 const UNAUTHORIZED = 401;
 

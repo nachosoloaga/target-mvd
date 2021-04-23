@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
 
 import { REJECTED, PENDING } from 'constants/actionStatusConstants';
 
 import Loading from 'components/common/Loading';
 import Input from 'components/common/Input';
-import { createTarget } from 'state/actions/targetActions';
+import SelectInput from 'components/common/SelectInput';
+import { createTarget, getTargetTopics } from 'state/actions/targetActions';
 import { createTarget as createTargetValidations } from 'utils/constraints';
 import {
   useValidation,
@@ -19,14 +21,22 @@ const fields = {
   title: 'title',
   lat: 'lat',
   lng: 'lng',
-  radius: 'radius'
+  radius: 'radius',
+  topic_id: 'topic_id'
 };
 
 const CreateTargetForm = () => {
   const validator = useValidation(createTargetValidations);
   const { status, error } = useStatus(createTarget);
   const createTargetRequest = useDispatch(createTarget);
+  const getTopicsRequest = useDispatch(getTargetTopics);
+  const topics = useSelector(state => state.targetReducer.topics, shallowEqual);
   const newTarget = useNewTarget();
+
+  useEffect(() => {
+    getTopicsRequest();
+  }, []);
+
   const {
     values,
     errors,
@@ -55,12 +65,13 @@ const CreateTargetForm = () => {
     touched
   );
 
+  // Set default value to lat and lng inputs
   const latInputProps = inputProps(fields.lat);
   const lngInputProps = inputProps(fields.lng);
   [latInputProps.value, lngInputProps.value] = [...newTarget.coords];
 
   return (
-    <div className="form-container">
+    <div className="new-target form-container">
       <form className="login-form" onSubmit={handleSubmit}>
         {status === REJECTED && <strong className="error">{error}</strong>}
         <div>
@@ -91,6 +102,15 @@ const CreateTargetForm = () => {
             className="input-text"
             label="Radio"
             {...inputProps(fields.radius)}
+          />
+        </div>
+        <div>
+          <SelectInput
+            name="topic_id"
+            className="input-text"
+            label="TOPIC"
+            options={topics}
+            {...inputProps(fields.topic_id)}
           />
         </div>
         <button className="button" type="submit">

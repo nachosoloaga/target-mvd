@@ -3,6 +3,7 @@ import {
   loginFulfilled,
   logoutFulfilled,
   signUpFulfilled,
+  logoutRejected,
   updateSession
 } from 'state/actions/userActions';
 
@@ -23,6 +24,7 @@ const sessionSlice = createSlice({
       state.user = payload;
     },
     [logoutFulfilled]: () => initialState,
+    [logoutRejected]: () => initialState,
     [updateSession]: (state, { payload }) => {
       state.info = payload;
       state.authenticated = true;

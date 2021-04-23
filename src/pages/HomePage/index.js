@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Map from 'components/common/Map';
+import Menu from 'components/common/HamburgerMenu';
 
 const HomePage = ({ children }) => {
   const [position, setPosition] = useState({ x: 51, y: -1 });
@@ -15,6 +16,7 @@ const HomePage = ({ children }) => {
 
   return (
     <div className="home-container">
+      <Menu />
       {children}
       <Map position={position} />
     </div>

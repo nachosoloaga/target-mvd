@@ -1,11 +1,8 @@
 import React from 'react';
-import { useIntl } from 'react-intl';
 import { object } from 'prop-types';
 
 const Option = ({ option }) => {
-  const intl = useIntl();
-
-  return <option value={option.value}>{intl.formatMessage({ id: option.id })}</option>;
+  return <option value={option.id}>{option.label}</option>;
 };
 
 Option.propTypes = {

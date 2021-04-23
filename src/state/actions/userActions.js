@@ -34,4 +34,4 @@ export const updateSession = createAction('session/update');
 
 export const { fulfilled: loginFulfilled, rejected: loginRejected } = login;
 export const { fulfilled: signUpFulfilled } = signUp;
-export const { fulfilled: logoutFulfilled } = logout;
+export const { fulfilled: logoutFulfilled, rejected: logoutRejected } = logout;
