@@ -9,6 +9,7 @@ import SelectInput from 'components/common/SelectInput';
 import Target from 'assets/target.png';
 import { createTarget, getTargetTopics } from 'state/actions/targetActions';
 import { createTarget as createTargetValidations } from 'utils/constraints';
+import { FormattedMessage } from 'react-intl';
 import {
   useValidation,
   useStatus,
@@ -80,7 +81,9 @@ const CreateTargetForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="new-target">
           <img src={Target} alt="Target" />
-          <h5>CREATE NEW TARGET</h5>
+          <h5>
+            <FormattedMessage id="target.create" />
+          </h5>
         </div>
         {status === REJECTED && <strong className="error">{error}</strong>}
         <div>
@@ -88,7 +91,7 @@ const CreateTargetForm = () => {
             name="title"
             type="text"
             className="input-text"
-            label="Titulo"
+            label={<FormattedMessage id="target.form.title" />}
             {...inputProps(fields.title)}
           />
         </div>
@@ -97,7 +100,7 @@ const CreateTargetForm = () => {
             name="lat"
             type="number"
             className="input-text"
-            label="Latitud"
+            label={<FormattedMessage id="target.form.lat" />}
             {...inputProps(fields.lat)}
           />
         </div>
@@ -106,7 +109,7 @@ const CreateTargetForm = () => {
             name="lng"
             type="number"
             className="input-text"
-            label="Longitud"
+            label={<FormattedMessage id="target.form.lng" />}
             {...inputProps(fields.lng)}
           />
         </div>
@@ -115,7 +118,7 @@ const CreateTargetForm = () => {
             name="radius"
             type="number"
             className="input-text"
-            label="Radio"
+            label={<FormattedMessage id="target.form.radius" />}
             {...inputProps(fields.radius)}
           />
         </div>
@@ -123,13 +126,13 @@ const CreateTargetForm = () => {
           <SelectInput
             name="topic_id"
             className="input-text"
-            label="TOPIC"
+            label={<FormattedMessage id="target.form.topic" />}
             options={topics}
             {...inputProps(fields.topic_id)}
           />
         </div>
         <button className="button new-target-button" type="submit">
-          Crear
+          {<FormattedMessage id="common.form.create" />}
         </button>
         {status === PENDING && <Loading />}
       </form>

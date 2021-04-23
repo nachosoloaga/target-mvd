@@ -42,6 +42,15 @@ export default {
   'common.contact': 'Contacto',
   'common.understand.button': 'Ok, lo entiendo',
   'common.geo.confirm': 'Permitir a la aplicación utilizar su ubicación actual',
+  'common.form.create': 'Crear',
+
+  // target
+  'target.create': 'Crear nuevo objetivo',
+  'target.form.title': 'Titulo',
+  'target.form.lat': 'Latitud',
+  'target.form.lng': 'Longitud',
+  'target.form.radius': 'Radio',
+  'target.form.topic': 'Tema',
 
   // errors
   'email.presence': 'Debe ingresar un email para continuar',

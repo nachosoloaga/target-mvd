@@ -37,6 +37,15 @@ export default {
   'common.contact': 'Contact',
   'common.understand.button': 'Ok, got it',
   'common.geo.confirm': 'Allow the application to use your current location',
+  'common.form.create': 'Create',
+
+  // target
+  'target.create': 'Create new target',
+  'target.form.title': 'Title',
+  'target.form.lat': 'Latitude',
+  'target.form.lng': 'Longitude',
+  'target.form.radius': 'Radius',
+  'target.form.topic': 'Topic',
 
   // errors
   'email.presence': 'You must enter an email to continue',
