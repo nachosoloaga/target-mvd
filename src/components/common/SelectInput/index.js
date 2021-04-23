@@ -33,6 +33,9 @@ const SelectInput = ({
           </label>
         )}
         <select name={name} value={value} onChange={onChange} {...props}>
+          <option value="" disabled>
+            Selecciona una opción
+          </option>
           {options.map(opt => {
             return <Option key={opt.id} option={opt} />;
           })}

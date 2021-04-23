@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 
 import { APP_TITLE } from 'constants/constants';
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
-import Menu from 'components/common/HamburgerMenu';
 import Point from 'assets/point.png';
 
 const HomeInfo = () => {
@@ -12,7 +11,6 @@ const HomeInfo = () => {
 
   return (
     <div className="home-info-container">
-      <Menu />
       <div className="home-info-text-container">
         <Smilies />
         <div className="info-text">

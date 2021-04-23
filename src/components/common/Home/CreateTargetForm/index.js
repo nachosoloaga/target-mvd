@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 
 import { REJECTED, PENDING } from 'constants/actionStatusConstants';
@@ -6,6 +6,7 @@ import { REJECTED, PENDING } from 'constants/actionStatusConstants';
 import Loading from 'components/common/Loading';
 import Input from 'components/common/Input';
 import SelectInput from 'components/common/SelectInput';
+import Target from 'assets/target.png';
 import { createTarget, getTargetTopics } from 'state/actions/targetActions';
 import { createTarget as createTargetValidations } from 'utils/constraints';
 import {
@@ -35,7 +36,15 @@ const CreateTargetForm = () => {
 
   useEffect(() => {
     getTopicsRequest();
-  }, []);
+  }, [getTopicsRequest]);
+
+  const initialValues = {
+    title: '',
+    lat: newTarget.coords[0],
+    lng: newTarget.coords[1],
+    topic_id: '',
+    radius: ''
+  };
 
   const {
     values,
@@ -48,6 +57,7 @@ const CreateTargetForm = () => {
     touched
   } = useForm(
     {
+      initialValues,
       onSubmit: createTargetRequest,
       validator,
       validateOnBlur: true
@@ -65,14 +75,13 @@ const CreateTargetForm = () => {
     touched
   );
 
-  // Set default value to lat and lng inputs
-  const latInputProps = inputProps(fields.lat);
-  const lngInputProps = inputProps(fields.lng);
-  [latInputProps.value, lngInputProps.value] = [...newTarget.coords];
-
   return (
-    <div className="new-target form-container">
-      <form className="login-form" onSubmit={handleSubmit}>
+    <div className="form-container new-target">
+      <form onSubmit={handleSubmit}>
+        <div className="new-target">
+          <img src={Target} alt="Target" />
+          <h5>CREATE NEW TARGET</h5>
+        </div>
         {status === REJECTED && <strong className="error">{error}</strong>}
         <div>
           <Input
@@ -83,16 +92,22 @@ const CreateTargetForm = () => {
             {...inputProps(fields.title)}
           />
         </div>
-        <div style={{ display: 'none' }}>
-          <Input name="lat" type="text" className="input-text" label="Latitud" {...latInputProps} />
+        <div>
+          <Input
+            name="lat"
+            type="number"
+            className="input-text"
+            label="Latitud"
+            {...inputProps(fields.lat)}
+          />
         </div>
-        <div style={{ display: 'none' }}>
+        <div>
           <Input
             name="lng"
-            type="text"
+            type="number"
             className="input-text"
             label="Longitud"
-            {...lngInputProps}
+            {...inputProps(fields.lng)}
           />
         </div>
         <div>
@@ -113,7 +128,7 @@ const CreateTargetForm = () => {
             {...inputProps(fields.topic_id)}
           />
         </div>
-        <button className="button" type="submit">
+        <button className="button new-target-button" type="submit">
           Crear
         </button>
         {status === PENDING && <Loading />}

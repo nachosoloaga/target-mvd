@@ -31,6 +31,9 @@ const fields = {
 export const SignUpForm = ({ onSubmit }) => {
   const intl = useIntl();
   const { status, error } = useStatus(signUp);
+  const genderOptionsIntl = genderOptions.map(opt => {
+    return { id: opt.id, label: intl.formatMessage({ id: opt.label }) };
+  });
 
   const validator = useValidation(signUpValidations);
   const {
@@ -88,7 +91,7 @@ export const SignUpForm = ({ onSubmit }) => {
             name="gender"
             className="input-text"
             label={intl.formatMessage(messages.gender).toUpperCase()}
-            options={genderOptions}
+            options={genderOptionsIntl}
             {...inputProps(fields.gender)}
           />
         </div>
