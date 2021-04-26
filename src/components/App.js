@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import { useSession } from 'hooks';
 
+import routes from 'constants/routesPaths';
 import GuestSwitch from './routes/GuestSwitch';
 import PrivateSwitch from './routes/PrivateSwitch';
 import GuestLayout from './common/Layout/GuestLayout';
@@ -19,7 +20,7 @@ const App = () => {
       </Helmet>
       <BrowserRouter>
         <Switch>
-          <Route path={['/login', '/sign-up']}>
+          <Route path={[routes.login, routes.signUp]}>
             <GuestLayout>
               <GuestSwitch />
             </GuestLayout>
