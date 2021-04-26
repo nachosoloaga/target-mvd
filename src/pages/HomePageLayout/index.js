@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { node } from 'prop-types';
-
 import Map from 'components/common/Map';
 import Menu from 'components/common/HamburgerMenu';
+import { node } from 'prop-types';
 
 const HomePageLayout = ({ children }) => {
   const [position, setPosition] = useState({ x: 51, y: -1 });
