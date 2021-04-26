@@ -43,6 +43,7 @@ export default {
   'common.understand.button': 'Ok, lo entiendo',
   'common.geo.confirm': 'Permitir a la aplicación utilizar su ubicación actual',
   'common.form.create': 'Crear',
+  'common.back': 'Atrás',
 
   // target
   'target.create': 'Crear nuevo objetivo',

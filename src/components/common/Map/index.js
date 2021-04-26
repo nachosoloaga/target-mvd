@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { object } from 'prop-types';
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
+import { useHistory } from 'react-router';
+import routes from 'constants/routesPaths';
 import NewTarget from './NewTarget';
 import { icon } from './Icons';
 
@@ -16,6 +18,7 @@ const UpdateCenter = ({ position }) => {
 
 const Map = ({ position }) => {
   const [newTargetPos, setNewTargetPos] = useState([]);
+  const history = useHistory();
 
   const setNewMarker = coords => {
     setNewTargetPos(coords);
@@ -34,7 +37,9 @@ const Map = ({ position }) => {
       />
       <UpdateCenter position={position} />
       <NewTarget setNewMarker={setNewMarker} />
-      {newTargetPos.length != 0 && <Marker position={newTargetPos} icon={icon} />}
+      {newTargetPos.length != 0 && history.location.pathname == routes.targets.create && (
+        <Marker position={newTargetPos} icon={icon} />
+      )}
     </MapContainer>
   );
 };

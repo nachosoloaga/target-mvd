@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { REJECTED, PENDING } from 'constants/actionStatusConstants';
 
@@ -10,6 +11,7 @@ import Target from 'assets/target.png';
 import { createTarget, getTargetTopics } from 'state/actions/targetActions';
 import { createTarget as createTargetValidations } from 'utils/constraints';
 import { FormattedMessage } from 'react-intl';
+import routes from 'constants/routesPaths';
 import {
   useValidation,
   useStatus,
@@ -136,6 +138,9 @@ const CreateTargetForm = () => {
         </button>
         {status === PENDING && <Loading />}
       </form>
+      <Link className="link" to={routes.index}>
+        <FormattedMessage id="common.back" />
+      </Link>
     </div>
   );
 };
