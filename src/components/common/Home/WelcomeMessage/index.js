@@ -6,7 +6,7 @@ import { APP_TITLE } from 'constants/constants';
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
 import Point from 'assets/point.png';
 
-const HomeInfo = () => {
+const WelcomeMessage = () => {
   return (
     <div className="home-info-container">
       <div className="home-info-text-container">
@@ -35,4 +35,4 @@ const HomeInfo = () => {
   );
 };
 
-export default HomeInfo;
+export default WelcomeMessage;
