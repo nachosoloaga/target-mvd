@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useIntl } from 'react-intl';
 
 import Map from 'components/common/Map';
 import HomeInfo from './HomeInfo';
 
 const HomePage = () => {
   const [position, setPosition] = useState({ x: 51, y: -1 });
-  const intl = useIntl();
 
   useEffect(() => {
     if (position.x === 51 && position.y === -1) {
@@ -14,7 +12,7 @@ const HomePage = () => {
         setPosition({ x: pos.coords.latitude, y: pos.coords.longitude })
       );
     }
-  }, [position, intl]);
+  }, [position]);
 
   return (
     <div className="home-container">
