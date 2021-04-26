@@ -1,9 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { setNewTargetCoords, getTargetTopicsFulfilled } from 'state/actions/targetActions';
+import {
+  setNewTargetCoords,
+  getTargetTopicsFulfilled,
+  getTargetsFulfilled
+} from 'state/actions/targetActions';
 
 const initialState = {
   coords: [],
-  topics: []
+  topics: [],
+  targets: []
 };
 
 const targetSlice = createSlice({
@@ -15,6 +20,9 @@ const targetSlice = createSlice({
     },
     [getTargetTopicsFulfilled]: (state, { payload }) => {
       state.topics = payload.topics.map(t => t.topic);
+    },
+    [getTargetsFulfilled]: (state, { payload }) => {
+      state.targets = payload.targets.map(t => t.target);
     }
   }
 });
