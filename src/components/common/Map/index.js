@@ -29,8 +29,8 @@ const Map = ({ position }) => {
   const { hasNewTarget, newTarget } = useNewTarget();
   const topics = useSelector(state => state.targetReducer.topics, shallowEqual);
   const targets = useSelector(state => state.targetReducer.targets, shallowEqual);
-  const getTopics = useDispatch(getTargetTopics);
   const getTargets = useDispatch(getTargetsAction);
+  const getTopics = useDispatch(getTargetTopics);
 
   useEffect(() => {
     if (topics.length === 0) {
