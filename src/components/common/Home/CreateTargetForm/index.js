@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { REJECTED, PENDING } from 'constants/actionStatusConstants';
 
@@ -35,6 +35,7 @@ const CreateTargetForm = () => {
   const createTargetRequest = useDispatch(createTarget);
   const getTopicsRequest = useDispatch(getTargetTopics);
   const topics = useSelector(state => state.targetReducer.topics, shallowEqual);
+  const history = useHistory();
   const newTarget = useNewTarget();
 
   useEffect(() => {
@@ -52,6 +53,7 @@ const CreateTargetForm = () => {
   const {
     values,
     errors,
+    submitted,
     handleValueChange,
     handleSubmit,
     handleFocus,
@@ -77,6 +79,10 @@ const CreateTargetForm = () => {
     activeFields,
     touched
   );
+
+  if (submitted) {
+    history.push(routes.index);
+  }
 
   return (
     <div className="form-container new-target">
