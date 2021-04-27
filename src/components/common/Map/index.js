@@ -4,7 +4,7 @@ import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
 import { useHistory } from 'react-router';
 import routes from 'constants/routesPaths';
 import NewTarget from './NewTarget';
-import { icon } from './Icons';
+import getTopicIcon from './Icons';
 
 const UpdateCenter = ({ position }) => {
   const map = useMap();
@@ -38,7 +38,7 @@ const Map = ({ position }) => {
       <UpdateCenter position={position} />
       <NewTarget setNewMarker={setNewMarker} />
       {newTargetPos.length != 0 && history.location.pathname == routes.targets.create && (
-        <Marker position={newTargetPos} icon={icon} />
+        <Marker position={newTargetPos} icon={getTopicIcon()} />
       )}
     </MapContainer>
   );
