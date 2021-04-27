@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 import routes from 'constants/routesPaths';
 import { useNewTarget } from 'hooks';
 import { shallowEqual, useSelector } from 'react-redux';
+import { getTargetTopics as getTopicsAction } from 'state/actions/targetActions';
 import NewTarget from './NewTarget';
 import getTopicIcon from './Icons';
 import { getTargets as getTargetsAction } from '../../../state/actions/targetActions';
@@ -26,6 +27,11 @@ const Map = ({ position }) => {
   const { hasNewTarget, newTarget } = useNewTarget();
   const targets = useSelector(state => state.targetReducer.targets, shallowEqual);
   const getTargets = useDispatch(getTargetsAction);
+  const getTargetTopics = useDispatch(getTopicsAction);
+
+  useEffect(() => {
+    getTargetTopics();
+  });
 
   useEffect(() => {
     if (targets.length === 0) {
