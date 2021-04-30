@@ -5,10 +5,12 @@ import { useHistory } from 'react-router';
 import routes from 'constants/routesPaths';
 import { useNewTarget } from 'hooks';
 import { shallowEqual, useSelector } from 'react-redux';
-import { getTargetTopics as getTopicsAction } from 'state/actions/targetActions';
 import NewTarget from './NewTarget';
 import getTopicIcon from './Icons';
-import { getTargets as getTargetsAction } from '../../../state/actions/targetActions';
+import {
+  getTargets as getTargetsAction,
+  getTargetTopics
+} from '../../../state/actions/targetActions';
 import useDispatch from '../../../hooks/useDispatch';
 import EnhancedMarker from './EnhancedMarker';
 
@@ -25,13 +27,16 @@ const UpdateCenter = ({ position }) => {
 const Map = ({ position }) => {
   const history = useHistory();
   const { hasNewTarget, newTarget } = useNewTarget();
+  const topics = useSelector(state => state.targetReducer.topics, shallowEqual);
   const targets = useSelector(state => state.targetReducer.targets, shallowEqual);
+  const getTopics = useDispatch(getTargetTopics);
   const getTargets = useDispatch(getTargetsAction);
-  const getTargetTopics = useDispatch(getTopicsAction);
 
   useEffect(() => {
-    getTargetTopics();
-  });
+    if (topics.length === 0) {
+      getTopics();
+    }
+  }, [topics, getTopics]);
 
   useEffect(() => {
     if (targets.length === 0) {
@@ -58,7 +63,7 @@ const Map = ({ position }) => {
       )}
 
       {targets.length != 0 &&
-        targets.map(target => <EnhancedMarker key={target.id} target={target} />)}
+        targets.map(target => <EnhancedMarker key={target.id} target={target} topics={topics} />)}
     </MapContainer>
   );
 };

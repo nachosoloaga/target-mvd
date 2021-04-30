@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { object } from 'prop-types';
+import { arrayOf, object } from 'prop-types';
 import { Marker, Popup } from 'react-leaflet';
-import { shallowEqual, useSelector } from 'react-redux';
 import getTopicIcon from '../Icons';
 
 const initialTopicState = {
@@ -9,9 +8,8 @@ const initialTopicState = {
   label: ''
 };
 
-const EnhancedMarker = ({ target }) => {
+const EnhancedMarker = ({ target, topics }) => {
   const [targetTopic, setTargetTopic] = useState(initialTopicState);
-  const topics = useSelector(state => state.targetReducer.topics, shallowEqual);
 
   useEffect(() => {
     if (topics.length != 0) {
@@ -28,7 +26,8 @@ const EnhancedMarker = ({ target }) => {
 };
 
 EnhancedMarker.propTypes = {
-  target: object.isRequired
+  target: object.isRequired,
+  topics: arrayOf(object).isRequired
 };
 
 export default EnhancedMarker;
