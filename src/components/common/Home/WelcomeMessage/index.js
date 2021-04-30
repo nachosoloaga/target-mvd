@@ -26,7 +26,7 @@ const WelcomeMessage = () => {
               <FormattedMessage id="app.welcome.item2" />
             </p>
           </div>
-          <Link className="link-button" to="/">
+          <Link className="link-button" to="/home">
             <FormattedMessage id="common.understand.button" />
           </Link>
         </div>

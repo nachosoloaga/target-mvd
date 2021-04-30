@@ -8,7 +8,7 @@ import Loading from 'components/common/Loading';
 import Input from 'components/common/Input';
 import SelectInput from 'components/common/SelectInput';
 import Target from 'assets/target.png';
-import { createTarget } from 'state/actions/targetActions';
+import { createTarget, getTargets } from 'state/actions/targetActions';
 import { createTarget as createTargetValidations } from 'utils/constraints';
 import { FormattedMessage } from 'react-intl';
 import routes from 'constants/routesPaths';
@@ -33,6 +33,7 @@ const CreateTargetForm = () => {
   const validator = useValidation(createTargetValidations);
   const { status, error } = useStatus(createTarget);
   const createTargetRequest = useDispatch(createTarget);
+  const getTargetsRequest = useDispatch(getTargets);
   const topics = useSelector(state => state.targetReducer.topics, shallowEqual);
   const history = useHistory();
   const { newTarget } = useNewTarget();
@@ -95,7 +96,7 @@ const CreateTargetForm = () => {
   });
 
   if (submitted) {
-    history.push(routes.index);
+    history.push(routes.home);
   }
 
   return (
