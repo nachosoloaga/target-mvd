@@ -44,8 +44,8 @@ const CreateTargetForm = () => {
 
   const initialValues = {
     title: '',
-    lat: newTarget.coords[0],
-    lng: newTarget.coords[1],
+    lat: '',
+    lng: '',
     topic_id: '',
     radius: ''
   };
@@ -79,6 +79,22 @@ const CreateTargetForm = () => {
     activeFields,
     touched
   );
+
+  useEffect(() => {
+    if (
+      (!values.lat && newTarget.coords.length != 0) ||
+      (values.lat && values.lat != newTarget.coords[0])
+    ) {
+      handleValueChange('lat', newTarget.coords[0]);
+    }
+
+    if (
+      (!values.lng && newTarget.coords.length != 0) ||
+      (values.lng && values.lng != newTarget.coords[1])
+    ) {
+      handleValueChange('lng', newTarget.coords[1]);
+    }
+  });
 
   if (submitted) {
     history.push(routes.index);

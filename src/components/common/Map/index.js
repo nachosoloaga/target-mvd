@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { object } from 'prop-types';
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
 import { useHistory } from 'react-router';
 import routes from 'constants/routesPaths';
+import { useNewTarget } from 'hooks';
 import NewTarget from './NewTarget';
 import getTopicIcon from './Icons';
 
@@ -17,12 +18,8 @@ const UpdateCenter = ({ position }) => {
 };
 
 const Map = ({ position }) => {
-  const [newTargetPos, setNewTargetPos] = useState([]);
   const history = useHistory();
-
-  const setNewMarker = coords => {
-    setNewTargetPos(coords);
-  };
+  const newTargetPos = useNewTarget();
 
   return (
     <MapContainer
@@ -36,9 +33,9 @@ const Map = ({ position }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <UpdateCenter position={position} />
-      <NewTarget setNewMarker={setNewMarker} />
-      {newTargetPos.length != 0 && history.location.pathname == routes.targets.create && (
-        <Marker position={newTargetPos} icon={getTopicIcon()} />
+      <NewTarget />
+      {newTargetPos.coords.length != 0 && history.location.pathname == routes.targets.create && (
+        <Marker position={newTargetPos.coords} icon={getTopicIcon()} />
       )}
     </MapContainer>
   );
