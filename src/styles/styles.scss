@@ -5,10 +5,11 @@
 @import '../components/user/LoginForm/login-form.scss';
 @import '../components/user/SignUpForm/sign-up-form.scss';
 @import '../components/common/HamburgerMenu/hamburger-menu.scss';
+@import '../components/common/Home/CreateTargetForm/create-target-form.scss';
 
 @import '../pages/LoginPage/login-page.scss';
 @import '../pages/SignUpPage/sign-up-page.scss';
-@import '../pages/HomePage/home-page.scss';
+@import '../pages/HomePageLayout/home-page.scss';
 
 html,
 body {
@@ -77,6 +78,12 @@ body {
 
 .blue-point {
   margin-right: 0.5rem;
+}
+
+.link {
+  text-decoration: none;
+  color: $black;
+  margin-top: 2rem;
 }
 
 // Input

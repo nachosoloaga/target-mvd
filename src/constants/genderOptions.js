@@ -1,15 +1,15 @@
 const genderOptions = [
   {
-    id: 'common.gender.male',
-    value: 'male'
+    label: 'common.gender.male',
+    id: 'male'
   },
   {
-    id: 'common.gender.female',
-    value: 'female'
+    label: 'common.gender.female',
+    id: 'female'
   },
   {
-    id: 'common.gender.other',
-    value: 'other'
+    label: 'common.gender.other',
+    id: 'other'
   }
 ];
 

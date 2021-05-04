@@ -27,6 +27,12 @@ export const signUp = {
   }
 };
 
+export const createTarget = {
+  title: {
+    presence: { message: 'title.presence' }
+  }
+};
+
 validate.validators.presence.options = { allowEmpty: false };
 
 export const validations = (constraints, props = {}) => data =>

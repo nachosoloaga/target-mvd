@@ -12,6 +12,7 @@ const useForm = (
   },
   ...dependencies
 ) => {
+  const [submitted, setSubmitted] = useState(false);
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [activeFields, setActiveFields] = useState({});
@@ -32,6 +33,7 @@ const useForm = (
         }, []).length;
       if (valid) {
         onSubmit(values);
+        setSubmitted(true);
       } else {
         setErrors(newErrors);
       }
@@ -97,6 +99,7 @@ const useForm = (
     setErrors,
     activeFields,
     setActiveFields,
+    submitted,
     handleValueChange,
     handleSubmit,
     handleFocus,

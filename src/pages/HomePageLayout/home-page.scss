@@ -44,7 +44,15 @@
     }
   }
 
-  button {
+  .link-button {
+    display: flex;
     margin-top: 25%;
+    width: 12rem;
+    height: 3rem;
+    color: $white;
+    background: $black;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
   }
 }

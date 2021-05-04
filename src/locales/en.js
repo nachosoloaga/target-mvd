@@ -37,10 +37,22 @@ export default {
   'common.contact': 'Contact',
   'common.understand.button': 'Ok, got it',
   'common.geo.confirm': 'Allow the application to use your current location',
+  'common.form.create': 'Create',
+  'common.form.select': 'Select an option',
+  'common.back': 'Go back',
+
+  // target
+  'target.create': 'Create new target',
+  'target.form.title': 'Title',
+  'target.form.lat': 'Latitude',
+  'target.form.lng': 'Longitude',
+  'target.form.radius': 'Radius',
+  'target.form.topic': 'Topic',
 
   // errors
   'email.presence': 'You must enter an email to continue',
   'email.invalid': 'You must enter a valid email',
+  'title.presence': 'You must enter a title to continue',
   'password.presence': 'You must enter a password to continue',
   'passwordConfirmation.presence': 'You must enter a password confirmation to continue',
   'passwordConfirmation.equality': 'Your password confirmation must be equal to the password'

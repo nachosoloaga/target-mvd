@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { arrayOf, bool, func, string } from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { arrayOf, bool, func, object, oneOfType, string } from 'prop-types';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 import { parseInputErrors } from 'utils/helpers';
 import Option from './Option';
@@ -24,6 +24,8 @@ const SelectInput = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const intl = useIntl();
+
   return (
     <div>
       <div className="input-container">
@@ -33,6 +35,9 @@ const SelectInput = ({
           </label>
         )}
         <select name={name} value={value} onChange={onChange} {...props}>
+          <option value="" disabled>
+            {intl.formatMessage({ id: 'common.form.select' })}
+          </option>
           {options.map(opt => {
             return <Option key={opt.id} option={opt} />;
           })}
@@ -52,7 +57,7 @@ const SelectInput = ({
 
 SelectInput.propTypes = {
   name: string.isRequired,
-  label: string,
+  label: oneOfType([string, object]),
   value: string,
   options: arrayOf(Object),
   onChange: func.isRequired,
