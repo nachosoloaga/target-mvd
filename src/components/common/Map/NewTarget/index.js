@@ -1,16 +1,15 @@
 import { useHistory } from 'react-router-dom';
 import { useMapEvents } from 'react-leaflet';
-import { setNewTargetCoords } from '../../../../state/actions/targetActions';
-import useDispatch from '../../../../hooks/useDispatch';
+import { useNewTarget } from 'hooks';
 
 const NewTarget = () => {
   const history = useHistory();
-  const updateCoordinates = useDispatch(setNewTargetCoords);
+  const { updateTargetCoords } = useNewTarget();
 
   useMapEvents({
     click(e) {
       const coordinates = [e.latlng.lat, e.latlng.lng];
-      updateCoordinates(coordinates);
+      updateTargetCoords(coordinates);
       if (history.location.pathname != '/targets/new') {
         history.push('/targets/new');
       }

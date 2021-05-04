@@ -1,14 +1,12 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { APP_TITLE } from 'constants/constants';
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
 import Point from 'assets/point.png';
 
 const HomeInfo = () => {
-  const history = useHistory();
-
   return (
     <div className="home-info-container">
       <div className="home-info-text-container">
@@ -28,9 +26,9 @@ const HomeInfo = () => {
               <FormattedMessage id="app.welcome.item2" />
             </p>
           </div>
-          <button type="button" className="button" onClick={() => history.push('/')}>
+          <Link className="link-button" to="/">
             <FormattedMessage id="common.understand.button" />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

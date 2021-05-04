@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { arrayOf, bool, func, string } from 'prop-types';
+import { arrayOf, bool, func, object, oneOfType, string } from 'prop-types';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import { parseInputErrors } from 'utils/helpers';
@@ -57,7 +57,7 @@ const SelectInput = ({
 
 SelectInput.propTypes = {
   name: string.isRequired,
-  label: string,
+  label: oneOfType([string, object]),
   value: string,
   options: arrayOf(Object),
   onChange: func.isRequired,

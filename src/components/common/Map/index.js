@@ -19,7 +19,7 @@ const UpdateCenter = ({ position }) => {
 
 const Map = ({ position }) => {
   const history = useHistory();
-  const newTargetPos = useNewTarget();
+  const { hasNewTarget, newTarget } = useNewTarget();
 
   return (
     <MapContainer
@@ -34,8 +34,8 @@ const Map = ({ position }) => {
       />
       <UpdateCenter position={position} />
       <NewTarget />
-      {newTargetPos.coords.length != 0 && history.location.pathname == routes.targets.create && (
-        <Marker position={newTargetPos.coords} icon={getTopicIcon()} />
+      {hasNewTarget && history.location.pathname == routes.targets.create && (
+        <Marker position={newTarget.coords} icon={getTopicIcon()} />
       )}
     </MapContainer>
   );

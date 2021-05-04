@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { node } from 'prop-types';
 
 import Map from 'components/common/Map';
 import Menu from 'components/common/HamburgerMenu';
 
-const HomePage = ({ children }) => {
+const HomePageLayout = ({ children }) => {
   const [position, setPosition] = useState({ x: 51, y: -1 });
 
   useEffect(() => {
-    if (position.x === 51 && position.y === -1) {
-      navigator.geolocation.getCurrentPosition(pos =>
-        setPosition({ x: pos.coords.latitude, y: pos.coords.longitude })
-      );
-    }
-  }, [position]);
+    navigator.geolocation.getCurrentPosition(pos =>
+      setPosition({ x: pos.coords.latitude, y: pos.coords.longitude })
+    );
+  }, []);
 
   return (
     <div className="home-container">
@@ -23,4 +22,8 @@ const HomePage = ({ children }) => {
   );
 };
 
-export default HomePage;
+HomePageLayout.propTypes = {
+  children: node.isRequired
+};
+
+export default HomePageLayout;

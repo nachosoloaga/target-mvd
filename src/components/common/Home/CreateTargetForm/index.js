@@ -36,7 +36,7 @@ const CreateTargetForm = () => {
   const getTopicsRequest = useDispatch(getTargetTopics);
   const topics = useSelector(state => state.targetReducer.topics, shallowEqual);
   const history = useHistory();
-  const newTarget = useNewTarget();
+  const { newTarget } = useNewTarget();
 
   useEffect(() => {
     getTopicsRequest();
@@ -81,6 +81,9 @@ const CreateTargetForm = () => {
   );
 
   useEffect(() => {
+    /* This mess of conditions is needed to keep the form state up-to-date with redux values. First part of the condition covers the case where lat field is empty in the form
+    (usually because of page refresh), but Redux has a value for it. Second part of the condition covers the case where lat field is already defined in the form, but the user
+    clicked on another part of the map, so the form must be updated with the new value obtained from Redux */
     if (
       (!values.lat && newTarget.coords.length != 0) ||
       (values.lat && values.lat != newTarget.coords[0])
