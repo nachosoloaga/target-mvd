@@ -10,6 +10,7 @@ import { shallowEqual, useSelector } from 'react-redux';
 const Home = () => {
   const { user } = useSession();
   const targets = useSelector(state => state.targetReducer.targets, shallowEqual);
+  const matches = useSelector(state => state.session.matches);
 
   return (
     <div className="home-info-container">
@@ -27,6 +28,8 @@ const Home = () => {
         <hr />
         <div className="info-text">
           {!targets.length && <h4>Crea tu primer objetivo haciendo click en el mapa</h4>}
+          {targets.length !== 0 && <h4>Todavía no se encontraron matches para tus objetivos </h4>}
+          {matches.length !== 0 && <h4>Aqui estan tus chats</h4>}
         </div>
       </div>
     </div>

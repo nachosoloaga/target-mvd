@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  getMatchesFulfilled,
   loginFulfilled,
   logoutFulfilled,
   signUpFulfilled,
@@ -9,7 +10,8 @@ import {
 const initialState = {
   authenticated: false,
   user: null,
-  info: {}
+  info: {},
+  matches: []
 };
 
 const sessionSlice = createSlice({
@@ -23,6 +25,9 @@ const sessionSlice = createSlice({
       state.user = payload;
     },
     [logoutFulfilled]: () => initialState,
+    [getMatchesFulfilled]: (state, { payload }) => {
+      state.matches = payload.matches;
+    },
     [updateSession]: (state, { payload }) => {
       state.info = payload;
       state.authenticated = true;
