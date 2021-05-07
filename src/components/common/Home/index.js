@@ -1,16 +1,23 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import { APP_TITLE } from 'constants/constants';
 import ProfileContainer from 'assets/profile-container.png';
 import Profile from 'assets/profile-icon.png';
-import { useSession } from 'hooks';
+import { useSession, useStatus } from 'hooks';
 import LogoutButton from 'components/user/LogoutButton';
 import { shallowEqual, useSelector } from 'react-redux';
+import { getTargets, getMatches } from 'state/actions/targetActions';
+import { FULFILLED, PENDING } from 'constants/actionStatusConstants';
+import Loading from '../Loading';
 
 const Home = () => {
   const { user } = useSession();
   const targets = useSelector(state => state.targetReducer.targets, shallowEqual);
-  const matches = useSelector(state => state.session.matches);
+  const matches = useSelector(state => state.targetReducer.matches);
+  const { status: targetsStatus } = useStatus(getTargets);
+  const { status: matchesStatus } = useStatus(getMatches);
 
   return (
     <div className="home-info-container">
@@ -21,16 +28,23 @@ const Home = () => {
           <img className="profile-icon" src={Profile} alt="Profile Icon" />
           <p className="username">{user.email}</p>
           <div className="actions">
-            <a>Editar</a>
+            <Link className="link" to="">
+              <FormattedMessage id="common.form.edit" />
+            </Link>
             <LogoutButton />
           </div>
         </div>
         <hr />
-        <div className="info-text">
-          {!targets.length && <h4>Crea tu primer objetivo haciendo click en el mapa</h4>}
-          {targets.length !== 0 && <h4>Todavía no se encontraron matches para tus objetivos </h4>}
-          {matches.length !== 0 && <h4>Aqui estan tus chats</h4>}
-        </div>
+        {(targetsStatus == PENDING || matchesStatus == PENDING) && <Loading />}
+        {targetsStatus == FULFILLED && matchesStatus == FULFILLED && (
+          <div className="info-text">
+            {targets.length == 0 && <h4>Crea tu primer objetivo haciendo click en el mapa</h4>}
+            {targets.length !== 0 && matches.length == 0 && (
+              <h4>Todavía no se encontraron matches para tus objetivos </h4>
+            )}
+            {matches.length !== 0 && <h4>Aqui estan tus chats</h4>}
+          </div>
+        )}
       </div>
     </div>
   );

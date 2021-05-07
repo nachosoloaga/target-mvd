@@ -12,10 +12,6 @@ class UserService {
   static signUp(user) {
     return httpClient.post('/users', user);
   }
-
-  static getMatches() {
-    return httpClient.get('/match_conversations');
-  }
 }
 
 export default UserService;

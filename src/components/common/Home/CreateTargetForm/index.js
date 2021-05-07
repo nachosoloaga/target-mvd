@@ -158,7 +158,7 @@ const CreateTargetForm = () => {
         </button>
         {status === PENDING && <Loading />}
       </form>
-      <Link className="link" to={routes.index}>
+      <Link className="link" to={routes.home}>
         <FormattedMessage id="common.back" />
       </Link>
     </div>

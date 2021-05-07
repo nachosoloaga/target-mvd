@@ -7,11 +7,7 @@ import { useNewTarget } from 'hooks';
 import { shallowEqual, useSelector } from 'react-redux';
 import NewTarget from './NewTarget';
 import getTopicIcon from './Icons';
-import {
-  getTargets as getTargetsAction,
-  getTargetTopics
-} from '../../../state/actions/targetActions';
-import useDispatch from '../../../hooks/useDispatch';
+
 import EnhancedMarker from './EnhancedMarker';
 
 const UpdateCenter = ({ position }) => {
@@ -29,20 +25,6 @@ const Map = ({ position }) => {
   const { hasNewTarget, newTarget } = useNewTarget();
   const topics = useSelector(state => state.targetReducer.topics, shallowEqual);
   const targets = useSelector(state => state.targetReducer.targets, shallowEqual);
-  const getTopics = useDispatch(getTargetTopics);
-  const getTargets = useDispatch(getTargetsAction);
-
-  useEffect(() => {
-    if (topics.length === 0) {
-      getTopics();
-    }
-  }, [topics, getTopics]);
-
-  useEffect(() => {
-    if (targets.length === 0) {
-      getTargets();
-    }
-  }, [getTargets, targets.length]);
 
   return (
     <MapContainer

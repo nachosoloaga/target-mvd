@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { APP_TITLE } from 'constants/constants';
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
 import Point from 'assets/point.png';
+import routes from 'constants/routesPaths';
 
 const WelcomeMessage = () => {
   return (
@@ -26,7 +27,7 @@ const WelcomeMessage = () => {
               <FormattedMessage id="app.welcome.item2" />
             </p>
           </div>
-          <Link className="link-button" to="/home">
+          <Link className="link-button" to={routes.home}>
             <FormattedMessage id="common.understand.button" />
           </Link>
         </div>
