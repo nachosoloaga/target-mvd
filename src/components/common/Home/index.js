@@ -11,6 +11,7 @@ import { shallowEqual, useSelector } from 'react-redux';
 import { getTargets, getMatches } from 'state/actions/targetActions';
 import { FULFILLED, PENDING } from 'constants/actionStatusConstants';
 import Loading from '../Loading';
+import EmptyFeed from './EmptyFeed';
 
 const Home = () => {
   const { user } = useSession();
@@ -38,7 +39,7 @@ const Home = () => {
         {(targetsStatus == PENDING || matchesStatus == PENDING) && <Loading />}
         {targetsStatus == FULFILLED && matchesStatus == FULFILLED && (
           <div className="info-text">
-            {targets.length == 0 && <h4>Crea tu primer objetivo haciendo click en el mapa</h4>}
+            {targets.length == 0 && <EmptyFeed />}
             {targets.length !== 0 && matches.length == 0 && (
               <h4>Todavía no se encontraron matches para tus objetivos </h4>
             )}
