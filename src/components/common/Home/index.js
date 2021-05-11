@@ -12,6 +12,7 @@ import { getTargets, getMatches } from 'state/actions/targetActions';
 import { FULFILLED, PENDING } from 'constants/actionStatusConstants';
 import Loading from '../Loading';
 import EmptyFeed from './EmptyFeed';
+import ChatList from './ChatList';
 
 const Home = () => {
   const { user } = useSession();
@@ -43,7 +44,7 @@ const Home = () => {
             {targets.length !== 0 && matches.length == 0 && (
               <h4>Todavía no se encontraron matches para tus objetivos </h4>
             )}
-            {matches.length !== 0 && <h4>Aqui estan tus chats</h4>}
+            {matches.length !== 0 && <ChatList matches={matches} />}
           </div>
         )}
       </div>
