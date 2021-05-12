@@ -33,7 +33,6 @@ export default {
     'TARGET comenzará un chat cuando tengas un match. Siempre puedes eliminar rechazar la conversación si no estas interesado/a.',
 
   // common
-
   'common.gender.male': 'Masculino',
   'common.gender.female': 'Femenino',
   'common.gender.other': 'Otro',
@@ -54,6 +53,13 @@ export default {
   'target.form.lng': 'Longitud',
   'target.form.radius': 'Radio',
   'target.form.topic': 'Tema',
+
+  // feed
+  'feed.noMatchesFound': 'Todavía no se encontraron matches para tus objetivos',
+  'feed.createFirstTarget': 'Crea tu primer objetivo haciendo click en el mapa',
+  'feed.popularCategories': 'Psss! Las categorías más populares son estas:',
+  'feed.scrollMessage': 'Scrollea para ver todos tus chats',
+  'feed.noMessages': 'Todavía no hay mensajes',
 
   // errors
   'email.presence': 'Debe ingresar un email para continuar',

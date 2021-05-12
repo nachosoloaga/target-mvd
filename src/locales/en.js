@@ -50,6 +50,14 @@ export default {
   'target.form.radius': 'Radius',
   'target.form.topic': 'Topic',
 
+  // feed
+
+  'feed.noMatchesFound': 'No matches for your targets were found yet',
+  'feed.createFirstTarget': 'Create your first target by clicking anywhere on the map',
+  'feed.popularCategories': 'Psss! These are the most popular categories:',
+  'feed.scrollMessage': 'Scroll to view all chats',
+  'feed.noMessages': 'No messages yet',
+
   // errors
   'email.presence': 'You must enter an email to continue',
   'email.invalid': 'You must enter a valid email',

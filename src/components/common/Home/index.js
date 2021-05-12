@@ -44,7 +44,9 @@ const Home = () => {
           <div className="info-text">
             {targets.length == 0 && <EmptyFeed />}
             {targets.length !== 0 && matches.length == 0 && (
-              <h4>Todavía no se encontraron matches para tus objetivos </h4>
+              <h4>
+                <FormattedMessage id="feed.noMatchesFound" />
+              </h4>
             )}
             {matches.length !== 0 && <ChatList matches={matches} />}
           </div>

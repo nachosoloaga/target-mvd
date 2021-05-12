@@ -1,12 +1,17 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import Smilies from 'assets/smilies.png';
 
 const EmptyFeed = () => {
   return (
     <div className="empty-feed-container">
-      <h4>Crea tu primer objetivo haciendo click en el mapa</h4>
+      <h4>
+        <FormattedMessage id="feed.createFirstTarget" />
+      </h4>
       <div className="empty-feed-info">
-        <h5>Psss! Las categorías más populares son estas:</h5>
+        <h5>
+          <FormattedMessage id="feed.popularCategories" />
+        </h5>
         <ul className="topics-list">
           <li>
             <span role="img" aria-label="futbol">
