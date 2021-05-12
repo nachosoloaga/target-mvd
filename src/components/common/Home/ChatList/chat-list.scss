@@ -1,5 +1,15 @@
-.chat-list-entries {
-  width: 800px;
+.chat-list-container {
+  width: 100%;
+}
+
+.chat-list-entries-container {
+  height: 350px;
+
+  .chat-list-entries {
+    height: 230px;
+    width: 100%;
+    overflow: auto;
+  }
 
   .header {
     text-align: center;
@@ -8,6 +18,10 @@
 
   .divider {
     margin-top: 0.5rem;
-    width: 55%;
+    width: 80%;
+  }
+
+  .scroll-message {
+    text-align: center;
   }
 }

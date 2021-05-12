@@ -7,13 +7,17 @@ const ChatList = ({ matches }) => {
   return (
     <div className="chat-list-container">
       <h4 className="header">Chat</h4>
-      <div className="chat-list-entries">
-        {matches.map(match => (
-          <div key={match.id}>
-            <MessagePreview match={match} />
-            <hr className="divider" />
-          </div>
-        ))}
+      <div className="chat-list-entries-container">
+        <div className="chat-list-entries">
+          <hr className="divider" />
+          {matches.map(match => (
+            <div key={match.id}>
+              <MessagePreview match={match} />
+              <hr className="divider" />
+            </div>
+          ))}
+        </div>
+        {matches.length > 3 && <p className="scroll-message">Scroll to view all chats</p>}
       </div>
       <img src={Smilies} alt="Smilies logo" className="smilies-bottom" />
     </div>

@@ -1,33 +1,25 @@
 .profile-container {
-  margin-top: 2rem;
-  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
-  .profile-icon-bg {
-    position: absolute;
-    left: 14.3%;
-    top: 17%;
-  }
+  .profile-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  .profile-icon {
-    position: absolute;
-    left: 15.75%;
-    top: 19.7%;
+    .profile-icon {
+      position: absolute;
+    }
   }
 
   .username {
-    position: absolute;
     font-size: 0.8rem;
-    left: 14.9%;
-    top: 31.5%;
   }
 
   .actions {
-    position: absolute;
     font-size: 0.9 rem;
-    left: 13.5%;
-    top: 36%;
     display: flex;
-
     a {
       margin-left: 0.5rem;
     }
@@ -35,6 +27,5 @@
 }
 
 hr {
-  margin-top: 2rem;
   width: 50%;
 }

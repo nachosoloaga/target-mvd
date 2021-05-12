@@ -26,8 +26,10 @@ const Home = () => {
       <div className="home-info-text-container">
         <h3>{APP_TITLE.toUpperCase()}</h3>
         <div className="profile-container">
-          <img className="profile-icon-bg" src={ProfileContainer} alt="Profile Container" />
-          <img className="profile-icon" src={Profile} alt="Profile Icon" />
+          <div className="profile-icon-container">
+            <img className="profile-icon-bg" src={ProfileContainer} alt="Profile Container" />
+            <img className="profile-icon" src={Profile} alt="Profile Icon" />
+          </div>
           <p className="username">{user.email}</p>
           <div className="actions">
             <Link className="link" to="">

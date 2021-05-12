@@ -21,7 +21,7 @@ const getTopicIcon = topicId => {
   let sizeY;
   const iconUrl = iconUrlByTopicId[topicId] || defaultIconUrl;
 
-  iconUrl === defaultIconUrl ? ([sizeX, sizeY] = [30, 50]) : ([sizeX, sizeY] = [50, 70]);
+  iconUrl === defaultIconUrl ? ([sizeX, sizeY] = [30, 50]) : ([sizeX, sizeY] = [50, 50]);
 
   return new L.Icon({
     iconUrl,
