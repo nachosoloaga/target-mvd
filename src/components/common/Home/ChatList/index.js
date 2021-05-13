@@ -12,7 +12,7 @@ const ChatList = ({ matches }) => {
         <div className="chat-list-entries">
           <hr className="divider" />
           {matches.map(match => (
-            <div key={match.id}>
+            <div key={match.matchId}>
               <MessagePreview match={match} />
               <hr className="divider" />
             </div>
