@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Smilies from 'assets/smilies.png';
 import { arrayOf, object } from 'prop-types';
 import MessagePreview from './MessagePreview';
 
@@ -24,7 +23,6 @@ const ChatList = ({ matches }) => {
           </p>
         )}
       </div>
-      <img src={Smilies} alt="Smilies logo" className="smilies-bottom" />
     </div>
   );
 };

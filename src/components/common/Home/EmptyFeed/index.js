@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Smilies from 'assets/smilies.png';
 
 const EmptyFeed = () => {
   return (
@@ -33,7 +32,6 @@ const EmptyFeed = () => {
           </li>
         </ul>
       </div>
-      <img src={Smilies} alt="Smilies logo" className="smilies-bottom" />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import LogoutButton from 'components/user/LogoutButton';
 import { shallowEqual, useSelector } from 'react-redux';
 import { getTargets, getMatches } from 'state/actions/targetActions';
 import { FULFILLED, PENDING } from 'constants/actionStatusConstants';
+import Smilies from 'assets/smilies.png';
 import Loading from '../Loading';
 import EmptyFeed from './EmptyFeed';
 import ChatList from './ChatList';
@@ -52,6 +53,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      <img src={Smilies} alt="Smilies logo" className="smilies-bottom" />
     </div>
   );
 };
