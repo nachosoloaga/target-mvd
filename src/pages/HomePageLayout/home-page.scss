@@ -3,12 +3,9 @@
   min-height: 100vh;
 }
 
-@media only screen and (max-width: 300px) {
-  .home-container {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+.map-container {
+  height: 100vh;
+  width: 65%;
 }
 
 .home-info-container {
@@ -63,5 +60,23 @@
     text-decoration: none;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .home-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .home-info-container {
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .map-container {
+    height: 100vh;
+    width: 100%;
   }
 }
