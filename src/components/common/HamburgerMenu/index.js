@@ -5,7 +5,7 @@ import HamburgerMenu from 'react-hamburger-menu';
 import { useSession } from 'hooks';
 import LogoutButton from 'components/user/LogoutButton';
 
-const Menu = () => {
+const Menu = ({ handleModal }) => {
   const [open, setOpen] = useState(false);
   const intl = useIntl();
   const { authenticated } = useSession();
@@ -33,7 +33,7 @@ const Menu = () => {
             </li>
 
             <li>
-              <Link to="contact">{intl.formatMessage({ id: 'common.contact' })}</Link>
+              <a onClick={handleModal}>{intl.formatMessage({ id: 'common.contact' })}</a>
             </li>
 
             {authenticated && (

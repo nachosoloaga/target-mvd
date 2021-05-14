@@ -9,6 +9,7 @@
 @import '../components/common/Home/EmptyFeed/empty-feed.scss';
 @import '../components/common/Home/ChatList/MessagePreview/message-preview.scss';
 @import '../components/common/Home/ChatList/chat-list.scss';
+@import '../components/common/ContactForm/contact-form.scss';
 @import '../components/common/Home/home.scss';
 
 @import '../pages/LoginPage/login-page.scss';
@@ -74,6 +75,11 @@ body {
 
   border: 0.5px solid $black;
   box-sizing: border-box;
+}
+
+.textarea {
+  height: 100px;
+  width: 500px;
 }
 
 .cursor-pointer {
