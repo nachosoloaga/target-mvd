@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Iphone } from 'assets/i6.svg';
+import Iphone from 'assets/i6.png';
 import appStoreImg from 'assets/appstore.png';
 import fbIconImg from 'assets/facebook-icon.png';
 import twitterIconImg from 'assets/twitter-icon.png';
@@ -8,7 +8,7 @@ const SocialMediaContainer = () => {
   return (
     <div className="social-media-container">
       <div className="iphone-container">
-        <Iphone />
+        <img src={Iphone} alt="iphone 6" />
       </div>
       <div className="app-store-container">
         <a href="https://www.apple.com/">

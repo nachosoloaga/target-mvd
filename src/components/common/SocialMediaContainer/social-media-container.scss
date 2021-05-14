@@ -6,24 +6,24 @@
   width: 50%;
   min-height: 100%;
   display: flex;
-  justify-content: center;
-}
-
-.app-store-container {
-  position: absolute;
-  bottom: 9.375rem;
-  left: 19rem;
-}
-
-.social-links-container {
-  position: absolute;
-  width: 5rem;
-  bottom: 6.25rem;
-  left: 20.25rem;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .iphone-container {
-  position: absolute;
+  margin-top: 5%;
+  img {
+    height: 650px;
+  }
+}
+
+.app-store-container {
+  margin-top: -10%;
+}
+
+.social-links-container {
+  margin-top: 3%;
+  width: 5rem;
+  display: flex;
+  justify-content: space-between;
 }
