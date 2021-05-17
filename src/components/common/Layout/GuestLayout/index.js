@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { node } from 'prop-types';
-
 import ContactModal from 'components/common/ContactModal';
 import { createQuestion } from 'state/actions/contactActions';
 import { useDispatch, useToggle } from 'hooks';

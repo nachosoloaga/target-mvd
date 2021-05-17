@@ -11,21 +11,7 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const webpack = require('@cypress/webpack-preprocessor');
-const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin');
-const env = require('dotenv').config({ path: `.env.${process.env.ENV || 'test'}` });
-
 module.exports = (on, config) => {
-  const options = {
-    // send in the options from your webpack.config.js, so it works the same
-    // as your app's code
-    webpackOptions: require('../../webpack/webpack.config.cypress'),
-    watchOptions: {}
-  };
-  on('file:preprocessor', webpack(options));
-  on('task', require('@cypress/code-coverage/task'));
-  config.env = { API_URL: env.parsed.API_URL };
-
-  addMatchImageSnapshotPlugin(on);
-  return config;
-};
+  // `on` is used to hook into various events Cypress emits
+  // `config` is the resolved Cypress config
+}
