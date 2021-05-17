@@ -4,6 +4,7 @@ import { useIntl } from 'react-intl';
 import HamburgerMenu from 'react-hamburger-menu';
 import { useSession } from 'hooks';
 import LogoutButton from 'components/user/LogoutButton';
+import { func } from 'prop-types';
 
 const Menu = ({ handleModal }) => {
   const [open, setOpen] = useState(false);
@@ -46,6 +47,10 @@ const Menu = ({ handleModal }) => {
       )}
     </>
   );
+};
+
+Menu.propTypes = {
+  handleModal: func.isRequired
 };
 
 export default Menu;

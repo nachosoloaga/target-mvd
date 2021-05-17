@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import ReactModal from 'react-modal';
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
 import Loading from 'components/common/Loading';
@@ -9,6 +9,7 @@ import { createQuestion } from 'state/actions/contactActions';
 
 import { createQuestion as createQuestionValidations } from 'utils/constraints';
 import { FULFILLED, REJECTED, PENDING } from 'constants/actionStatusConstants';
+import { FormattedMessage } from 'react-intl';
 
 const fields = {
   email: 'email',
@@ -24,7 +25,7 @@ const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
       setShowConfirmation(true);
       setTimeout(handleModal, 3000);
     }
-  }, [status]);
+  }, [status, handleModal]);
 
   const validator = useValidation(createQuestionValidations);
   const {
@@ -67,10 +68,16 @@ const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
           X
         </button>
         <Smilies className="smilies-logo" alt="Logo with faces smiling" />
-        <h1>Don&apos;t be shy, drop us a line!</h1>
+        <h1>
+          <FormattedMessage id="contact.form.description" />
+        </h1>
         <form className="contact-form" onSubmit={handleSubmit}>
           {status === REJECTED && <strong className="error">{error}</strong>}
-          {showConfirmation && <strong className="success">Message sent successfully!</strong>}
+          {showConfirmation && (
+            <strong className="success">
+              <FormattedMessage id="contact.form.messageSent" />
+            </strong>
+          )}
           <div>
             <Input
               name="email"
@@ -91,7 +98,7 @@ const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
           </div>
           <div>
             <button className="button" type="submit">
-              SEND
+              <FormattedMessage id="common.form.send" />
             </button>
           </div>
           {status === PENDING && <Loading />}
@@ -103,7 +110,8 @@ const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
 
 ContactForm.propTypes = {
   isOpen: bool.isRequired,
-  handleModal: func.isRequired
+  handleModal: func.isRequired,
+  onSubmit: func.isRequired
 };
 
 export default ContactForm;

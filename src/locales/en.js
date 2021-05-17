@@ -39,8 +39,13 @@ export default {
   'common.geo.confirm': 'Allow the application to use your current location',
   'common.form.create': 'Create',
   'common.form.edit': 'Edit',
+  'common.form.send': 'Send',
   'common.form.select': 'Select an option',
   'common.back': 'Go back',
+
+  // contact form
+  'contact.form.messageSent': 'Message sent successfully!',
+  'contact.form.description': 'Don&apos;t be shy, drop us a line!',
 
   // target
   'target.create': 'Create new target',
