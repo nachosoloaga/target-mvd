@@ -90,7 +90,7 @@ const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
           <div>
             <Input
               name="body"
-              className="input-text"
+              className="input-text input-text-large"
               label="MESSAGE"
               type="text"
               {...inputProps(fields.body)}

@@ -25,9 +25,18 @@
 .contact-form {
   display: flex;
   flex-direction: column;
+  text-align: center;
 
   button {
     margin-top: 10%;
+  }
+
+  .input-text {
+    padding-left: 30rem;
+  }
+
+  .input-text-large {
+    padding-top: 5rem;
   }
 }
 
@@ -39,4 +48,17 @@
   width: 40%;
   height: 70%;
   justify-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact-modal {
+    width: 80%;
+    height: 90%;
+  }
+
+  .contact-form {
+    .input-text {
+      padding-left: 0rem;
+    }
+  }
 }
