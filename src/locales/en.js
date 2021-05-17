@@ -67,5 +67,6 @@ export default {
   'title.presence': 'You must enter a title to continue',
   'password.presence': 'You must enter a password to continue',
   'passwordConfirmation.presence': 'You must enter a password confirmation to continue',
-  'passwordConfirmation.equality': 'Your password confirmation must be equal to the password'
+  'passwordConfirmation.equality': 'Your password confirmation must be equal to the password',
+  'question.presence': 'Message cannot be empty'
 };

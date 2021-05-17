@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import ReactModal from 'react-modal';
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
+import Loading from 'components/common/Loading';
 import Input from 'components/common/Input';
 import { useStatus, useForm, useValidation, useTextInputProps } from 'hooks';
 import { bool, func } from 'prop-types';
+import { createQuestion } from 'state/actions/contactActions';
 
-import { signUp as signUpValidations } from 'utils/constraints';
-import { signUp } from 'state/actions/userActions';
+import { createQuestion as createQuestionValidations } from 'utils/constraints';
+import { FULFILLED, REJECTED, PENDING } from 'constants/actionStatusConstants';
 
 const fields = {
   email: 'email',
-  message: 'message'
+  body: 'body'
 };
 
 const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
-  const { status, error } = useStatus(signUp);
+  const { status, error } = useStatus(createQuestion);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const validator = useValidation(signUpValidations);
+  useLayoutEffect(() => {
+    if (status === FULFILLED) {
+      setShowConfirmation(true);
+      setTimeout(handleModal, 3000);
+    }
+  }, [status]);
+
+  const validator = useValidation(createQuestionValidations);
   const {
     values,
     errors,
@@ -46,7 +56,12 @@ const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
   );
 
   return (
-    <ReactModal isOpen={isOpen} contentLabel="Example modal" className="contact-modal">
+    <ReactModal
+      ariaHideApp={false}
+      isOpen={isOpen}
+      contentLabel="Example modal"
+      className="contact-modal"
+    >
       <div className="contact-form-container">
         <button className="close-button" type="button" onClick={handleModal}>
           X
@@ -54,10 +69,12 @@ const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
         <Smilies className="smilies-logo" alt="Logo with faces smiling" />
         <h1>Don&apos;t be shy, drop us a line!</h1>
         <form className="contact-form" onSubmit={handleSubmit}>
+          {status === REJECTED && <strong className="error">{error}</strong>}
+          {showConfirmation && <strong className="success">Message sent successfully!</strong>}
           <div>
             <Input
               name="email"
-              className="input-text large"
+              className="input-text"
               label="EMAIL"
               type="email"
               {...inputProps(fields.email)}
@@ -65,16 +82,19 @@ const ContactForm = ({ isOpen, handleModal, onSubmit }) => {
           </div>
           <div>
             <Input
-              name="message"
-              className="input-text textarea"
+              name="body"
+              className="input-text"
               label="MESSAGE"
               type="text"
-              {...inputProps(fields.message)}
+              {...inputProps(fields.body)}
             />
           </div>
-          <button type="submit" className="button">
-            SEND
-          </button>
+          <div>
+            <button className="button" type="submit">
+              SEND
+            </button>
+          </div>
+          {status === PENDING && <Loading />}
         </form>
       </div>
     </ReactModal>
