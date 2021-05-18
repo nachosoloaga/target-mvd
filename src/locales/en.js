@@ -49,6 +49,9 @@ export default {
   'target.form.lng': 'Longitude',
   'target.form.radius': 'Radius',
   'target.form.topic': 'Topic',
+  'target.trendTopics.football': 'Football',
+  'target.trendTopics.travel': 'Travel',
+  'target.trendTopics.music': 'Music',
 
   // feed
 

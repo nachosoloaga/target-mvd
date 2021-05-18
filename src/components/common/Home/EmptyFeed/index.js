@@ -16,19 +16,19 @@ const EmptyFeed = () => {
             <span role="img" aria-label="futbol">
               ⚽️
             </span>
-            Fútbol
+            <FormattedMessage id="target.trendTopics.football" />
           </li>
           <li>
             <span role="img" aria-label="travel">
               🌎
             </span>
-            Viajes
+            <FormattedMessage id="target.trendTopics.travel" />
           </li>
           <li>
             <span role="img" aria-label="musica">
               🎵
             </span>
-            Música
+            <FormattedMessage id="target.trendTopics.music" />
           </li>
         </ul>
       </div>

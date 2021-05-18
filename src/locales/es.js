@@ -53,6 +53,9 @@ export default {
   'target.form.lng': 'Longitud',
   'target.form.radius': 'Radio',
   'target.form.topic': 'Tema',
+  'target.trendTopics.football': 'Fútbol',
+  'target.trendTopics.travel': 'Viajes',
+  'target.trendTopics.music': 'Música',
 
   // feed
   'feed.noMatchesFound': 'Todavía no se encontraron matches para tus objetivos',
