@@ -118,6 +118,10 @@ body {
   display: flex;
   flex-direction: column;
   width: 50%;
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
 }
 
 .guest-layout-container {
@@ -127,10 +131,6 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-  .page-container {
-    width: 100%;
-  }
-
   .main {
     width: 100%;
   }
