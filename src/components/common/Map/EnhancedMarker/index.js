@@ -1,22 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { arrayOf, object } from 'prop-types';
+import React from 'react';
+import { object } from 'prop-types';
 import { Marker, Popup } from 'react-leaflet';
+import { useTargetTopic } from 'state/selectorHooks';
 import getTopicIcon from '../Icons';
 
-const initialTopicState = {
-  id: '',
-  label: ''
-};
-
-const EnhancedMarker = ({ target, topics }) => {
-  const [targetTopic, setTargetTopic] = useState(initialTopicState);
-
-  useEffect(() => {
-    if (topics.length != 0) {
-      const temp = topics.find(t => t.id == target.topicId);
-      setTargetTopic(temp);
-    }
-  }, [topics, target, setTargetTopic]);
+const EnhancedMarker = ({ target }) => {
+  const targetTopic = useTargetTopic(target.topicId);
 
   return (
     <Marker position={[target.lat, target.lng]} icon={getTopicIcon(target.topicId)}>
@@ -26,8 +15,7 @@ const EnhancedMarker = ({ target, topics }) => {
 };
 
 EnhancedMarker.propTypes = {
-  target: object.isRequired,
-  topics: arrayOf(object).isRequired
+  target: object.isRequired
 };
 
 export default EnhancedMarker;
