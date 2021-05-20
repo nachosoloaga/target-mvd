@@ -10,7 +10,10 @@ import LogoutButton from 'components/user/LogoutButton';
 import { shallowEqual, useSelector } from 'react-redux';
 import { getTargets, getMatches } from 'state/actions/targetActions';
 import { FULFILLED, PENDING } from 'constants/actionStatusConstants';
+import Smilies from 'assets/smilies.png';
 import Loading from '../Loading';
+import EmptyFeed from './EmptyFeed';
+import ChatList from './ChatList';
 
 const Home = () => {
   const { user } = useSession();
@@ -24,8 +27,10 @@ const Home = () => {
       <div className="home-info-text-container">
         <h3>{APP_TITLE.toUpperCase()}</h3>
         <div className="profile-container">
-          <img className="profile-icon-bg" src={ProfileContainer} alt="Profile Container" />
-          <img className="profile-icon" src={Profile} alt="Profile Icon" />
+          <div className="profile-icon-container">
+            <img className="profile-icon-bg" src={ProfileContainer} alt="Profile Container" />
+            <img className="profile-icon" src={Profile} alt="Profile Icon" />
+          </div>
           <p className="username">{user.email}</p>
           <div className="actions">
             <Link className="link" to="">
@@ -38,14 +43,17 @@ const Home = () => {
         {(targetsStatus == PENDING || matchesStatus == PENDING) && <Loading />}
         {targetsStatus == FULFILLED && matchesStatus == FULFILLED && (
           <div className="info-text">
-            {targets.length == 0 && <h4>Crea tu primer objetivo haciendo click en el mapa</h4>}
+            {targets.length == 0 && <EmptyFeed />}
             {targets.length !== 0 && matches.length == 0 && (
-              <h4>Todavía no se encontraron matches para tus objetivos </h4>
+              <h4>
+                <FormattedMessage id="feed.noMatchesFound" />
+              </h4>
             )}
-            {matches.length !== 0 && <h4>Aqui estan tus chats</h4>}
+            {matches.length !== 0 && <ChatList matches={matches} />}
           </div>
         )}
       </div>
+      <img src={Smilies} alt="Smilies logo" className="smilies-bottom" />
     </div>
   );
 };

@@ -1,0 +1,16 @@
+.empty-feed-container {
+  text-align: center;
+
+  .topics-list {
+    list-style: none;
+
+    li {
+      margin-top: 1.5rem;
+      padding-right: 3rem;
+    }
+  }
+
+  .empty-feed-info {
+    margin-top: 5rem;
+  }
+}
