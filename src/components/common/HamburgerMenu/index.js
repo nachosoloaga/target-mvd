@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useIntl } from 'react-intl';
-import HamburgerMenu from 'react-hamburger-menu';
 import { useSession } from 'hooks';
-import LogoutButton from 'components/user/LogoutButton';
+import { Link } from 'react-router-dom';
 import { func } from 'prop-types';
+import HamburgerMenu from 'react-hamburger-menu';
+import LogoutButton from 'components/user/LogoutButton';
 
 const Menu = ({ handleModal }) => {
   const [open, setOpen] = useState(false);
