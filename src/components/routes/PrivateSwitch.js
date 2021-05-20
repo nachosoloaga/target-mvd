@@ -3,11 +3,11 @@ import { Switch } from 'react-router-dom';
 import { bool } from 'prop-types';
 
 import routes from 'constants/routesPaths';
-import CreateTargetForm from 'components/common/Home/CreateTargetForm';
 import PrivateRoute from './PrivateRoute';
 import HomePageLayout from '../../pages/HomePageLayout';
-import HomeInfo from '../../pages/HomePageLayout/HomeInfo';
 import Landing from '../common/Home/Landing';
+import WelcomeMessage from '../common/Home/WelcomeMessage';
+import CreateTargetForm from '../common/Home/CreateTargetForm';
 
 const PrivateSwitch = ({ authenticated }) => {
   return (
@@ -16,7 +16,7 @@ const PrivateSwitch = ({ authenticated }) => {
         <PrivateRoute
           exact
           path={routes.welcome}
-          component={HomeInfo}
+          component={WelcomeMessage}
           authenticated={authenticated}
         />
         <PrivateRoute

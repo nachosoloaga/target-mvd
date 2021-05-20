@@ -5,6 +5,10 @@ class TargetService {
     return httpClient.post('/targets/', target);
   }
 
+  static getTargets() {
+    return httpClient.get('/targets/');
+  }
+
   static getTargetTopics() {
     return httpClient.get('/topics/');
   }

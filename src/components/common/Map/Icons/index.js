@@ -26,7 +26,7 @@ const getTopicIcon = topicId => {
   return new L.Icon({
     iconUrl,
     iconAnchor: null,
-    popupAnchor: null,
+    popupAnchor: [0, -30],
     shadowUrl: null,
     shadowSize: null,
     shadowAnchor: null,
