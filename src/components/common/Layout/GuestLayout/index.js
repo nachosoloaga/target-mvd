@@ -6,7 +6,7 @@ import SocialMediaContainer from '../../SocialMediaContainer';
 
 const GuestLayout = ({ children }) => {
   return (
-    <div className="page-container">
+    <div className="guest-layout-container">
       <Menu />
       <div className="main">{children}</div>
       <SocialMediaContainer />

@@ -5,6 +5,10 @@
 .chat-list-entries-container {
   height: 350px;
 
+  @media only screen and (max-width: $medium-bp) {
+    height: 250px;
+  }
+
   .chat-list-entries {
     height: 230px;
     width: 100%;

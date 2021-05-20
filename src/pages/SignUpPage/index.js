@@ -16,7 +16,7 @@ const SignUpPage = () => {
   }
 
   return (
-    <div className="sign-up-page-container">
+    <div className="page-container">
       <div className="sign-up-form-container">
         <h2>
           <FormattedMessage id="signup.title" />

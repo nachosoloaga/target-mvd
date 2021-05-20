@@ -116,6 +116,22 @@ body {
 
 .page-container {
   display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  @media only screen and (max-width: $medium-bp) {
+    width: 100%;
+  }
+}
+
+.guest-layout-container {
+  display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+@media only screen and (max-width: $medium-bp) {
+  .main {
+    width: 100%;
+  }
 }
