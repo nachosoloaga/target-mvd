@@ -63,7 +63,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: $medium-bp) {
   .home-container {
     display: flex;
     min-height: 100vh;

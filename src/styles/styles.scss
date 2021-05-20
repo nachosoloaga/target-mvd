@@ -119,7 +119,7 @@ body {
   flex-direction: column;
   width: 50%;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: $medium-bp) {
     width: 100%;
   }
 }
@@ -130,7 +130,7 @@ body {
   flex-direction: column;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: $medium-bp) {
   .main {
     width: 100%;
   }
