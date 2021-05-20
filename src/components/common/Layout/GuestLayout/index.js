@@ -1,28 +1,24 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import { node } from 'prop-types';
 
 import ContactForm from 'components/common/ContactForm';
+import { createQuestion } from 'state/actions/contactActions';
+import { useDispatch, useToggle } from 'hooks';
 import Menu from '../../HamburgerMenu';
 import SocialMediaContainer from '../../SocialMediaContainer';
-import { createQuestion } from 'state/actions/contactActions';
-import { useDispatch } from 'hooks';
 
 const GuestLayout = ({ children }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, toggleModal] = useToggle();
   const createQuestionRequest = useDispatch(createQuestion);
-
-  const toggleModalOpen = () => {
-    setIsModalOpen(!isModalOpen);
-  };
 
   return (
     <div className="guest-layout-container">
-      <Menu handleModal={toggleModalOpen} />
+      <Menu handleModal={toggleModal} />
       <div className="main">
         {children}
         <ContactForm
           isOpen={isModalOpen}
-          handleModal={toggleModalOpen}
+          handleModal={toggleModal}
           onSubmit={createQuestionRequest}
         />
       </div>
