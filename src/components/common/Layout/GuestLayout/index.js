@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { node } from 'prop-types';
 
-import ContactForm from 'components/common/ContactForm';
+import ContactModal from 'components/common/ContactModal';
 import { createQuestion } from 'state/actions/contactActions';
 import { useDispatch, useToggle } from 'hooks';
 import Menu from '../../HamburgerMenu';
@@ -16,7 +16,7 @@ const GuestLayout = ({ children }) => {
       <Menu handleModal={toggleModal} />
       <div className="main">
         {children}
-        <ContactForm
+        <ContactModal
           isOpen={isModalOpen}
           handleModal={toggleModal}
           onSubmit={createQuestionRequest}
