@@ -6,3 +6,4 @@ export { default as useTextInputProps } from './useTextInputProps';
 export { default as useSelectOptions } from './useSelectOptions';
 export { default as useStatus } from './useStatus';
 export { default as useNewTarget } from './useNewTarget';
+export { default as useToggle } from './useToggle';

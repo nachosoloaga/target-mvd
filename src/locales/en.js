@@ -39,8 +39,13 @@ export default {
   'common.geo.confirm': 'Allow the application to use your current location',
   'common.form.create': 'Create',
   'common.form.edit': 'Edit',
+  'common.form.send': 'Send',
   'common.form.select': 'Select an option',
   'common.back': 'Go back',
+
+  // contact form
+  'contact.form.messageSent': 'Message sent successfully!',
+  'contact.form.description': 'Don&apos;t be shy, drop us a line!',
 
   // target
   'target.create': 'Create new target',
@@ -67,5 +72,6 @@ export default {
   'title.presence': 'You must enter a title to continue',
   'password.presence': 'You must enter a password to continue',
   'passwordConfirmation.presence': 'You must enter a password confirmation to continue',
-  'passwordConfirmation.equality': 'Your password confirmation must be equal to the password'
+  'passwordConfirmation.equality': 'Your password confirmation must be equal to the password',
+  'question.presence': 'Message cannot be empty'
 };
