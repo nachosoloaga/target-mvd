@@ -12,6 +12,10 @@ class TargetService {
   static getTargetTopics() {
     return httpClient.get('/topics/');
   }
+
+  static getMatches() {
+    return httpClient.get('/match_conversations');
+  }
 }
 
 export default TargetService;

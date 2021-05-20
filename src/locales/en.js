@@ -38,6 +38,7 @@ export default {
   'common.understand.button': 'Ok, got it',
   'common.geo.confirm': 'Allow the application to use your current location',
   'common.form.create': 'Create',
+  'common.form.edit': 'Edit',
   'common.form.select': 'Select an option',
   'common.back': 'Go back',
 

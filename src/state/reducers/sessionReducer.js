@@ -9,7 +9,9 @@ import {
 const initialState = {
   authenticated: false,
   user: null,
-  info: {}
+  info: {},
+  matches: [],
+  targets: []
 };
 
 const sessionSlice = createSlice({

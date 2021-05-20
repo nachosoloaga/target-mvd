@@ -5,7 +5,7 @@ import { bool } from 'prop-types';
 import routes from 'constants/routesPaths';
 import PrivateRoute from './PrivateRoute';
 import HomePageLayout from '../../pages/HomePageLayout';
-import Landing from '../common/Home/Landing';
+import Home from '../common/Home';
 import WelcomeMessage from '../common/Home/WelcomeMessage';
 import CreateTargetForm from '../common/Home/CreateTargetForm';
 
@@ -25,7 +25,14 @@ const PrivateSwitch = ({ authenticated }) => {
           component={CreateTargetForm}
           authenticated={authenticated}
         />
-        <PrivateRoute exact path={routes.index} component={Landing} authenticated={authenticated} />
+        <PrivateRoute exact path={routes.home} component={Home} authenticated={authenticated} />
+
+        <PrivateRoute
+          exact
+          path={routes.index}
+          component={WelcomeMessage}
+          authenticated={authenticated}
+        />
       </HomePageLayout>
     </Switch>
   );
