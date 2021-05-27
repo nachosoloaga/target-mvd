@@ -11,6 +11,7 @@ import { shallowEqual, useSelector } from 'react-redux';
 import { getTargets, getMatches } from 'state/actions/targetActions';
 import { FULFILLED, PENDING } from 'constants/actionStatusConstants';
 import Smilies from 'assets/smilies.png';
+import routes from 'constants/routesPaths';
 import Loading from '../Loading';
 import EmptyFeed from './EmptyFeed';
 import ChatList from './ChatList';
@@ -33,7 +34,7 @@ const Home = () => {
           </div>
           <p className="username">{user.email}</p>
           <div className="actions">
-            <Link className="link" to="">
+            <Link className="link" to={routes.editProfile}>
               <FormattedMessage id="common.form.edit" />
             </Link>
             <LogoutButton />
