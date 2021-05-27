@@ -3,8 +3,9 @@ import { useIntl, FormattedMessage } from 'react-intl';
 import { useStatus, useForm, useValidation, useTextInputProps } from 'hooks';
 import Input from 'components/common/Input';
 import { editProfile } from 'state/actions/userActions';
-import { signUp as signUpValidations } from 'utils/constraints';
+import { editProfile as editProfileValidations } from 'utils/constraints';
 import { func, object } from 'prop-types';
+import { FULFILLED } from 'constants/actionStatusConstants';
 
 const messages = {
   email: 'edit.form.email',
@@ -24,7 +25,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
   const intl = useIntl();
   const { status, error } = useStatus(editProfile);
 
-  const validator = useValidation(signUpValidations);
+  const validator = useValidation(editProfileValidations);
   const {
     values,
     errors,
@@ -54,7 +55,13 @@ const EditProfileForm = ({ onSubmit, user }) => {
   );
 
   return (
-    <form className="edit-profile-form" onSubmit={handleSubmit}>
+    <form className="edit-profile-form" onSubmit={event => handleSubmit(event, user)}>
+      {error && <p className="error">{error}</p>}
+      {status == FULFILLED && (
+        <p className="success">
+          <FormattedMessage id="edit.form.success" />
+        </p>
+      )}
       <div>
         <Input
           name="email"
@@ -62,7 +69,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
           label={intl.formatMessage({ id: messages.email }).toUpperCase()}
           type="email"
           placeholder={user.email}
-          {...inputProps(fields.passwordConfirmation)}
+          {...inputProps(fields.email)}
         />
       </div>
       <div>
@@ -71,7 +78,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
           className="input-text"
           label={intl.formatMessage({ id: messages.currentPassword }).toUpperCase()}
           type="password"
-          {...inputProps(fields.passwordConfirmation)}
+          {...inputProps(fields.currentPassword)}
         />
       </div>
       <div>
@@ -80,7 +87,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
           className="input-text"
           label={intl.formatMessage({ id: messages.newPassword }).toUpperCase()}
           type="password"
-          {...inputProps(fields.passwordConfirmation)}
+          {...inputProps(fields.newPassword)}
         />
       </div>
       <div>
@@ -89,7 +96,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
           className="input-text"
           label={intl.formatMessage({ id: messages.confirmNewPassword }).toUpperCase()}
           type="password"
-          {...inputProps(fields.passwordConfirmation)}
+          {...inputProps(fields.newPasswordConfirmation)}
         />
       </div>
       <div>

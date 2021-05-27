@@ -30,11 +30,16 @@ export const signUp = createAsyncThunk('user/signup', async user => {
   }
 });
 
-export const editProfile = createAsyncThunk('user/editProfile', async user => {
+export const editProfile = createAsyncThunk('user/editProfile', async payload => {
   try {
-    // const { data } = await userService.editProfile({ user });
-    // return data;
-    await userService.editProfile({ user });
+    if (payload.email) {
+      const { data } = await userService.editProfile(payload);
+      return data;
+    }
+    if (payload.currentPassword) {
+      const { data } = await userService.changePassword(payload);
+      return data;
+    }
   } catch ({ response: { data } }) {
     throw parseError(data);
   }

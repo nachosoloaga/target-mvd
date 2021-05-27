@@ -21,7 +21,7 @@ const useForm = (
   const [touched, setTouched] = useState({});
 
   const handleSubmit = useCallback(
-    event => {
+    (event, user = { id: '' }) => {
       event.preventDefault();
       const newErrors = validator(values) || {};
 
@@ -34,6 +34,7 @@ const useForm = (
           return acc;
         }, []).length;
       if (valid) {
+        values.userId = user.id;
         onSubmit(values);
         setSubmitted(true);
       } else {

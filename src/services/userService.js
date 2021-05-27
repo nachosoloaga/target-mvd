@@ -13,8 +13,15 @@ class UserService {
     return httpClient.post('/users', user);
   }
 
-  static editProfile(user) {
-    console.log('Edit profile ', user);
+  static editProfile(payload) {
+    return httpClient.put(`https://target-mvd-api.herokuapp.com/api/v1/users/${payload.userId}`, {
+      email: payload.email
+    });
+  }
+
+  static changePassword(passwordInfo) {
+    console.log('Change password', passwordInfo);
+    // return httpClient.put('https://target-mvd-api.herokuapp.com/api/v1/users/password', passwordInfo)
   }
 }
 

@@ -52,6 +52,7 @@ export default {
   'edit.form.currentPassword': 'Current password',
   'edit.form.newPassword': 'New password',
   'edit.form.confirmNewPassword': 'Repeat password',
+  'edit.form.success': 'Your profile was updated successfully',
 
   // target
   'target.create': 'Create new target',

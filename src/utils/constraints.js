@@ -43,6 +43,13 @@ export const createQuestion = {
   }
 };
 
+export const editProfile = {
+  email: {
+    presence: { message: 'email.presence' },
+    email: { message: 'email.invalid' }
+  }
+};
+
 validate.validators.presence.options = { allowEmpty: false };
 
 export const validations = (constraints, props = {}) => data =>
