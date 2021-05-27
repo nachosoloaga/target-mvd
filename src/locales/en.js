@@ -47,6 +47,12 @@ export default {
   'contact.form.messageSent': 'Message sent successfully!',
   'contact.form.description': 'Don&apos;t be shy, drop us a line!',
 
+  // edit form
+  'edit.form.email': 'Email',
+  'edit.form.currentPassword': 'Current password',
+  'edit.form.newPassword': 'New password',
+  'edit.form.confirmNewPassword': 'Repeat password',
+
   // target
   'target.create': 'Create new target',
   'target.form.title': 'Title',

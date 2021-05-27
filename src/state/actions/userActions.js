@@ -30,8 +30,19 @@ export const signUp = createAsyncThunk('user/signup', async user => {
   }
 });
 
+export const editProfile = createAsyncThunk('user/editProfile', async user => {
+  try {
+    // const { data } = await userService.editProfile({ user });
+    // return data;
+    await userService.editProfile({ user });
+  } catch ({ response: { data } }) {
+    throw parseError(data);
+  }
+});
+
 export const updateSession = createAction('session/update');
 
 export const { fulfilled: loginFulfilled, rejected: loginRejected } = login;
 export const { fulfilled: signUpFulfilled } = signUp;
 export const { fulfilled: logoutFulfilled, rejected: logoutRejected } = logout;
+export const { fulfilled: editProfileFulfilled, rejected: editProfileRejected } = editProfile;

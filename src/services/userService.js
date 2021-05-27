@@ -12,6 +12,10 @@ class UserService {
   static signUp(user) {
     return httpClient.post('/users', user);
   }
+
+  static editProfile(user) {
+    console.log('Edit profile ', user);
+  }
 }
 
 export default UserService;

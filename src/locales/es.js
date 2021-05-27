@@ -51,6 +51,12 @@ export default {
   'contact.form.messageSent': 'Mensaje enviado correctamente!',
   'contact.form.description': 'Escribenos algo, vamos!',
 
+  // edit form
+  'edit.form.email': 'Email',
+  'edit.form.currentPassword': 'Contraseña actual',
+  'edit.form.newPassword': 'Nueva contraseña',
+  'edit.form.confirmNewPassword': 'Repetir contraseña',
+
   // target
   'target.create': 'Crear nuevo objetivo',
   'target.form.title': 'Titulo',

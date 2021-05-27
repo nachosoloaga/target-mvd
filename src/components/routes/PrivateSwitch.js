@@ -8,7 +8,7 @@ import HomePageLayout from '../../pages/HomePageLayout';
 import Home from '../common/Home';
 import WelcomeMessage from '../common/Home/WelcomeMessage';
 import CreateTargetForm from '../common/Home/CreateTargetForm';
-import EditProfileForm from '../user/EditProfileForm';
+import EditProfile from '../user/EditProfile';
 
 const PrivateSwitch = ({ authenticated }) => {
   return (
@@ -30,7 +30,7 @@ const PrivateSwitch = ({ authenticated }) => {
         <PrivateRoute
           exact
           path={routes.editProfile}
-          component={EditProfileForm}
+          component={EditProfile}
           authenticated={authenticated}
         />
         <PrivateRoute
