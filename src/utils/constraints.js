@@ -44,9 +44,34 @@ export const createQuestion = {
 };
 
 export const editProfile = {
-  email: {
-    presence: { message: 'email.presence' },
-    email: { message: 'email.invalid' }
+  email(_, attributes) {
+    if (
+      !attributes.currentPassword &&
+      !attributes.newPassword &&
+      !attributes.newPasswordConfirmation
+    ) {
+      return {
+        presence: { message: 'edit.form.presence' }
+      };
+    }
+  },
+  newPassword(_, attributes) {
+    if (attributes.currentPassword) {
+      return {
+        presence: { message: 'password.presence' }
+      };
+    }
+  },
+  newPasswordConfirmation(_, attributes) {
+    if (attributes.newPassword) {
+      return {
+        presence: { message: 'passwordConfirmation.presence' },
+        equality: {
+          attribute: 'newPassword',
+          message: 'passwordConfirmation.equality'
+        }
+      };
+    }
   }
 };
 

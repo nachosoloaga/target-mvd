@@ -17,8 +17,8 @@ const messages = {
 const fields = {
   email: 'email',
   currentPassword: 'currentPassword',
-  newPassword: 'password',
-  newPasswordConfirmation: 'passwordConfirmation'
+  newPassword: 'newPassword',
+  newPasswordConfirmation: 'newPasswordConfirmation'
 };
 
 const EditProfileForm = ({ onSubmit, user }) => {

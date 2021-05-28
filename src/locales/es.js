@@ -83,5 +83,6 @@ export default {
   'password.presence': 'Debe ingresar una contraseña para continuar',
   'passwordConfirmation.presence': 'Debe confirmar su contraseña para continuar',
   'passwordConfirmation.equality': 'Su confirmación de contraseña debe ser igual a la contraseña',
-  'question.presence': 'El mensaje no puede estar vacío'
+  'question.presence': 'El mensaje no puede estar vacío',
+  'edit.form.presence': 'Debe ingresar un correo o una nueva contraseña para continuar'
 };

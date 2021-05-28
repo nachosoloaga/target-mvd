@@ -9,7 +9,7 @@ const EnhancedMarker = ({ target }) => {
 
   return (
     <Marker position={[target.lat, target.lng]} icon={getTopicIcon(target.topicId)}>
-      <Popup>{`${target.title}, ${targetTopic.label}`}</Popup>
+      <Popup>{`${target.title}, ${targetTopic?.label}`}</Popup>
     </Marker>
   );
 };
