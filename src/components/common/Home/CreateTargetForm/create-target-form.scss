@@ -5,6 +5,11 @@
   align-items: center;
 }
 
+.new-target-container {
+  @extend .new-target;
+  width: 35%;
+}
+
 .new-target-button {
   margin-top: 2rem !important;
 }

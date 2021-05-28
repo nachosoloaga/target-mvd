@@ -11,14 +11,15 @@ const messages = {
   email: 'edit.form.email',
   currentPassword: 'edit.form.currentPassword',
   newPassword: 'edit.form.newPassword',
-  confirmNewPassword: 'edit.form.confirmNewPassword'
+  confirmNewPassword: 'edit.form.confirmNewPassword',
+  edit: 'common.form.edit'
 };
 
 const fields = {
   email: 'email',
   currentPassword: 'currentPassword',
-  newPassword: 'newPassword',
-  newPasswordConfirmation: 'newPasswordConfirmation'
+  newPassword: 'password',
+  newPasswordConfirmation: 'passwordConfirmation'
 };
 
 const EditProfileForm = ({ onSubmit, user }) => {
@@ -83,7 +84,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
       </div>
       <div>
         <Input
-          name="newPassword"
+          name="password"
           className="input-text"
           label={intl.formatMessage({ id: messages.newPassword }).toUpperCase()}
           type="password"
@@ -92,7 +93,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
       </div>
       <div>
         <Input
-          name="newPasswordConfirmation"
+          name="passwordConfirmation"
           className="input-text"
           label={intl.formatMessage({ id: messages.confirmNewPassword }).toUpperCase()}
           type="password"
@@ -101,7 +102,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
       </div>
       <div>
         <button className="button" type="submit">
-          <FormattedMessage id="common.form.edit" />
+          {intl.formatMessage({ id: messages.edit }).toUpperCase()}
         </button>
       </div>
     </form>

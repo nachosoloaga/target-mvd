@@ -3,9 +3,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 100px;
+  padding-bottom: 70px;
 
-  .profile-container {
-    margin-top: 100px;
+  @media only screen and (max-width: $medium-bp) {
+    width: 100%;
   }
 
   .edit-profile-form {
@@ -21,14 +23,6 @@
 
     .button {
       margin-top: 20px;
-    }
-  }
-
-  .confirm-password {
-    .input-container {
-      .input-label {
-        font-size: 1px !important;
-      }
     }
   }
 }

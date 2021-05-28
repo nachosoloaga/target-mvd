@@ -55,14 +55,14 @@ export const editProfile = {
       };
     }
   },
-  newPassword(_, attributes) {
+  password(_, attributes) {
     if (attributes.currentPassword) {
       return {
         presence: { message: 'password.presence' }
       };
     }
   },
-  newPasswordConfirmation(_, attributes) {
+  passwordConfirmation(_, attributes) {
     if (attributes.newPassword) {
       return {
         presence: { message: 'passwordConfirmation.presence' },
