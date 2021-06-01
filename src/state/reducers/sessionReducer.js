@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  editProfileFulfilled,
   loginFulfilled,
   logoutFulfilled,
   signUpFulfilled,
@@ -11,7 +12,8 @@ const initialState = {
   user: null,
   info: {},
   matches: [],
-  targets: []
+  targets: [],
+  error: {}
 };
 
 const sessionSlice = createSlice({
@@ -28,6 +30,16 @@ const sessionSlice = createSlice({
     [updateSession]: (state, { payload }) => {
       state.info = payload;
       state.authenticated = true;
+    },
+    [editProfileFulfilled]: (state, { payload }) => {
+      // This reducer takes care of both email change and password change cases.
+      // That is why it expects the data in three different formats: array when both fields
+      // were updated. payload.data when only password was changed, and payload.user when email was changed.
+      if (Array.isArray(payload)) {
+        state.user = payload[0].data.user;
+      } else {
+        state.user = payload?.data || payload?.user;
+      }
     }
   }
 });

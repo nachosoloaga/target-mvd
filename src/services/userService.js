@@ -15,15 +15,18 @@ class UserService {
 
   static editProfile(payload) {
     return httpClient.put(`https://target-mvd-api.herokuapp.com/api/v1/users/${payload.userId}`, {
-      email: payload.email
+      user: {
+        email: payload.email
+      }
     });
   }
 
-  static changePassword(passwordInfo) {
-    return httpClient.put(
-      'https://target-mvd-api.herokuapp.com/api/v1/users/password',
-      passwordInfo
-    );
+  static changePassword(payload) {
+    return httpClient.put('https://target-mvd-api.herokuapp.com/api/v1/users/password', {
+      currentPassword: payload.currentPassword,
+      password: payload.password,
+      password_confirmation: payload.passwordConfirmation
+    });
   }
 }
 

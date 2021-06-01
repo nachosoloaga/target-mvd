@@ -33,8 +33,10 @@ export const signUp = createAsyncThunk('user/signup', async user => {
 export const editProfile = createAsyncThunk('user/editProfile', async payload => {
   try {
     if (payload.email && payload.currentPassword) {
-      const { data } = await userService.editProfile(payload);
-      await userService.changePassword(payload);
+      const data = Promise.all([
+        userService.editProfile(payload),
+        userService.changePassword(payload)
+      ]);
       return data;
     }
     if (payload.email) {
