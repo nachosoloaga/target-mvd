@@ -56,7 +56,7 @@ const EditProfileForm = ({ onSubmit, user }) => {
   );
 
   return (
-    <form className="edit-profile-form" onSubmit={event => handleSubmit(event, user)}>
+    <form className="edit-profile-form" onSubmit={handleSubmit}>
       {error && <p className="error">{error}</p>}
       {status == FULFILLED && (
         <p className="success">

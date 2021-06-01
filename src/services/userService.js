@@ -1,4 +1,5 @@
 import httpClient from 'httpClient';
+import storeConfig from 'state/store/configureStore';
 
 class UserService {
   static login(user) {
@@ -14,7 +15,9 @@ class UserService {
   }
 
   static editProfile(payload) {
-    return httpClient.put(`https://target-mvd-api.herokuapp.com/api/v1/users/${payload.userId}`, {
+    const currentState = storeConfig.store.getState();
+    const userId = currentState.session.user.id;
+    return httpClient.put(`https://target-mvd-api.herokuapp.com/api/v1/users/${userId}`, {
       user: {
         email: payload.email
       }

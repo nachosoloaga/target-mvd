@@ -5,7 +5,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import reducer from 'state/reducers';
 
-export default initialState => {
+export default (initialState => {
   const logger = createLogger({
     collapsed: true,
     predicate: (getState, { type }) => !startsWith(type, '@@router')
@@ -34,4 +34,4 @@ export default initialState => {
   const persistor = persistStore(store);
 
   return { store, persistor };
-};
+})();
