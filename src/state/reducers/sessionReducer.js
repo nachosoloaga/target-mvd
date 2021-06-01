@@ -32,13 +32,12 @@ const sessionSlice = createSlice({
       state.authenticated = true;
     },
     [editProfileFulfilled]: (state, { payload }) => {
-      // This reducer takes care of both email change and password change cases.
-      // That is why it expects the data in three different formats: array when both fields
-      // were updated. payload.data when only password was changed, and payload.user when email was changed.
+      // This condition checks for the different structures in which data can be
+      // returned by editProfile action.
       if (Array.isArray(payload)) {
         state.user = payload[0].data.user;
       } else {
-        state.user = payload?.data || payload?.user;
+        state.user = payload;
       }
     }
   }

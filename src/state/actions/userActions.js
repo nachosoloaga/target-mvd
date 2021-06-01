@@ -41,11 +41,11 @@ export const editProfile = createAsyncThunk('user/editProfile', async payload =>
     }
     if (payload.email) {
       const { data } = await userService.editProfile(payload);
-      return data;
+      return data.user;
     }
     if (payload.currentPassword) {
       const { data } = await userService.changePassword(payload);
-      return data;
+      return data.data;
     }
   } catch ({ response: { data } }) {
     throw parseError(data);
