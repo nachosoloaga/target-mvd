@@ -7,7 +7,6 @@ import { useSession } from 'hooks';
 import routes from 'constants/routesPaths';
 import GuestSwitch from './routes/GuestSwitch';
 import PrivateSwitch from './routes/PrivateSwitch';
-import GuestLayout from './common/Layout/GuestLayout';
 import { APP_TITLE } from '../constants/constants';
 
 const App = () => {
@@ -20,10 +19,13 @@ const App = () => {
       </Helmet>
       <BrowserRouter>
         <Switch>
+          <Route path={[routes.about]}>
+            {!authenticated && <GuestSwitch />}
+            {authenticated && <PrivateSwitch authenticated={authenticated} />}
+          </Route>
+
           <Route path={[routes.login, routes.signUp]}>
-            <GuestLayout>
-              <GuestSwitch />
-            </GuestLayout>
+            <GuestSwitch />
           </Route>
 
           <Route path="/*">

@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import { bool } from 'prop-types';
 
 import routes from 'constants/routesPaths';
+import About from 'components/common/About';
 import PrivateRoute from './PrivateRoute';
 import HomePageLayout from '../../pages/HomePageLayout';
 import Home from '../common/Home';
@@ -39,6 +40,7 @@ const PrivateSwitch = ({ authenticated }) => {
           component={WelcomeMessage}
           authenticated={authenticated}
         />
+        <PrivateRoute exact path={routes.about} component={About} authenticated={authenticated} />
       </HomePageLayout>
     </Switch>
   );

@@ -7,7 +7,8 @@ const routes = {
   home: '/home',
   targets: {
     create: '/targets/new'
-  }
+  },
+  about: '/about'
 };
 
 export default routes;
