@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  editProfileFulfilled,
   loginFulfilled,
   logoutFulfilled,
   signUpFulfilled,
@@ -11,7 +12,8 @@ const initialState = {
   user: null,
   info: {},
   matches: [],
-  targets: []
+  targets: [],
+  error: {}
 };
 
 const sessionSlice = createSlice({
@@ -28,6 +30,15 @@ const sessionSlice = createSlice({
     [updateSession]: (state, { payload }) => {
       state.info = payload;
       state.authenticated = true;
+    },
+    [editProfileFulfilled]: (state, { payload }) => {
+      // This condition checks for the different structures in which data can be
+      // returned by editProfile action.
+      if (Array.isArray(payload)) {
+        state.user = payload[0].data.user;
+      } else {
+        state.user = payload;
+      }
     }
   }
 });

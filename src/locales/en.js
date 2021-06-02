@@ -47,6 +47,13 @@ export default {
   'contact.form.messageSent': 'Message sent successfully!',
   'contact.form.description': 'Don&apos;t be shy, drop us a line!',
 
+  // edit form
+  'edit.form.email': 'Email',
+  'edit.form.currentPassword': 'Current password',
+  'edit.form.newPassword': 'New password',
+  'edit.form.confirmNewPassword': 'Repeat password',
+  'edit.form.success': 'Your profile was updated successfully',
+
   // target
   'target.create': 'Create new target',
   'target.form.title': 'Title',
@@ -73,5 +80,6 @@ export default {
   'password.presence': 'You must enter a password to continue',
   'passwordConfirmation.presence': 'You must enter a password confirmation to continue',
   'passwordConfirmation.equality': 'Your password confirmation must be equal to the password',
-  'question.presence': 'Message cannot be empty'
+  'question.presence': 'Message cannot be empty',
+  'edit.form.presence': 'You must enter an email or a new password to continue'
 };

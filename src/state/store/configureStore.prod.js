@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import reducer from 'state/reducers';
 
-export default (initialState, isServerSide = false) => {
+export default ((initialState, isServerSide = false) => {
   const store = configureStore({
     reducer,
     preloadedState: initialState
@@ -16,4 +16,4 @@ export default (initialState, isServerSide = false) => {
   const persistor = persistStore(store);
 
   return { store, persistor };
-};
+})();

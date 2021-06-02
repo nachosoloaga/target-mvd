@@ -43,6 +43,38 @@ export const createQuestion = {
   }
 };
 
+export const editProfile = {
+  email(_, attributes) {
+    if (
+      !attributes.currentPassword &&
+      !attributes.newPassword &&
+      !attributes.newPasswordConfirmation
+    ) {
+      return {
+        presence: { message: 'edit.form.presence' }
+      };
+    }
+  },
+  password(_, attributes) {
+    if (attributes.currentPassword) {
+      return {
+        presence: { message: 'password.presence' }
+      };
+    }
+  },
+  passwordConfirmation(_, attributes) {
+    if (attributes.newPassword) {
+      return {
+        presence: { message: 'passwordConfirmation.presence' },
+        equality: {
+          attribute: 'newPassword',
+          message: 'passwordConfirmation.equality'
+        }
+      };
+    }
+  }
+};
+
 validate.validators.presence.options = { allowEmpty: false };
 
 export const validations = (constraints, props = {}) => data =>

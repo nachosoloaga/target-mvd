@@ -9,7 +9,7 @@ import includes from 'lodash/includes';
 
 import httpClient from 'httpClient';
 import applyDefaultInterceptors from 'httpClient/applyDefaultInterceptors';
-import configureStore from 'state/store/configureStore';
+import storeConfig from 'state/store/configureStore';
 import App from 'components/App';
 import locales from 'locales';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from 'constants/constants';
@@ -43,18 +43,16 @@ const supportedUserLocale = includes(SUPPORTED_LANGUAGES, usersLocale);
 const locale = supportedUserLocale ? usersLocale : DEFAULT_LANGUAGE;
 const messages = locales[locale];
 
-const { persistor, store } = configureStore();
-
 // Expose store when run in Cypress
 if (window.Cypress) {
-  window.store = store;
+  window.store = storeConfig.store;
 }
 
 const renderApp = Component => {
   render(
     <IntlProvider locale={locale} messages={messages} defaultLocale="en">
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+      <Provider store={storeConfig.store}>
+        <PersistGate loading={null} persistor={storeConfig.persistor}>
           <AppContainer>
             <Component />
           </AppContainer>
@@ -65,7 +63,7 @@ const renderApp = Component => {
   );
 };
 
-applyDefaultInterceptors(store, httpClient);
+applyDefaultInterceptors(storeConfig.store, httpClient);
 renderApp(App);
 
 setConfig({ logLevel: 'no-errors-please' });

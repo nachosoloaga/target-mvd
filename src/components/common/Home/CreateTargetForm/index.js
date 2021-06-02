@@ -99,7 +99,7 @@ const CreateTargetForm = () => {
   }
 
   return (
-    <div className="form-container new-target">
+    <div className="form-container new-target-container">
       <form onSubmit={handleSubmit}>
         <div className="new-target">
           <img src={Target} alt="Target" />
