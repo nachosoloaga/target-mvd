@@ -1,6 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 const About = () => {
+  const history = useHistory();
+
   return (
     <div className="about-section">
       <h1>What&apos;s target?</h1>
@@ -17,6 +21,9 @@ const About = () => {
         cupboard and sleep all day groom yourself 4 hours - checked, have your beauty sleep 18 hours
         - checked, be fabulous for the rest of the day - checked!.
       </p>
+      <button onClick={history.goBack} className="button" type="button">
+        <FormattedMessage id="common.back" />
+      </button>
     </div>
   );
 };
