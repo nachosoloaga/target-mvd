@@ -4,7 +4,7 @@ import { persistReducer } from 'redux-persist';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 import statusReducer from './statusReducer';
-import session from './sessionReducer';
+import sessionReducer from './sessionReducer';
 import targetReducer from './targetReducer';
 
 const sessionPersistConfig = {
@@ -15,7 +15,7 @@ const sessionPersistConfig = {
 };
 
 const rootReducer = combineReducers({
-  session: persistReducer(sessionPersistConfig, session),
+  session: persistReducer(sessionPersistConfig, sessionReducer),
   statusReducer,
   targetReducer
 });

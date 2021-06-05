@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Redirect, Switch, Route } from 'react-router-dom';
 import { bool } from 'prop-types';
 
 import routes from 'constants/routesPaths';
@@ -34,13 +34,11 @@ const PrivateSwitch = ({ authenticated }) => {
           component={EditProfile}
           authenticated={authenticated}
         />
-        <PrivateRoute
-          exact
-          path={routes.index}
-          component={WelcomeMessage}
-          authenticated={authenticated}
-        />
         <PrivateRoute exact path={routes.about} component={About} authenticated={authenticated} />
+        <PrivateRoute exact path={routes.index} component={Home} authenticated={authenticated} />
+        <Route to="*">
+          <Redirect to={routes.home} />
+        </Route>
       </HomePageLayout>
     </Switch>
   );

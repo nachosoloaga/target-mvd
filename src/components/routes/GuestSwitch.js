@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import routes from 'constants/routesPaths';
 import About from 'components/common/About';
@@ -14,6 +14,9 @@ const GuestSwitch = () => {
         <Route path={routes.login} component={LoginPage} />
         <Route path={routes.signUp} component={SignUpPage} />
         <Route path={routes.about} component={About} />
+        <Route path="*">
+          <Redirect to={routes.login} />
+        </Route>
       </Switch>
     </GuestLayout>
   );
