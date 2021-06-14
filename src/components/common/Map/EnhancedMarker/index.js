@@ -1,15 +1,15 @@
 import React from 'react';
 import { object } from 'prop-types';
 import { Marker, Popup } from 'react-leaflet';
-import { useTargetTopic } from 'state/selectorHooks';
+import PopupCard from './PopupCard';
 import getTopicIcon from '../Icons';
 
 const EnhancedMarker = ({ target }) => {
-  const targetTopic = useTargetTopic(target.topicId);
-
   return (
     <Marker position={[target.lat, target.lng]} icon={getTopicIcon(target.topicId)}>
-      <Popup>{`${target.title}, ${targetTopic?.label}`}</Popup>
+      <Popup>
+        <PopupCard target={target} />
+      </Popup>
     </Marker>
   );
 };

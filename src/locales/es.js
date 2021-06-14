@@ -46,6 +46,7 @@ export default {
   'common.form.send': 'Enviar',
   'common.form.select': 'Selecciona una opción',
   'common.back': 'Atrás',
+  'common.delete': 'Eliminar',
 
   // contact form
   'contact.form.messageSent': 'Mensaje enviado correctamente!',
@@ -68,6 +69,7 @@ export default {
   'target.trendTopics.football': 'Fútbol',
   'target.trendTopics.travel': 'Viajes',
   'target.trendTopics.music': 'Música',
+  'target.delete.confirm': 'Está seguro que desea eliminar este objetivo?',
 
   // feed
   'feed.noMatchesFound': 'Todavía no se encontraron matches para tus objetivos',
