@@ -16,6 +16,10 @@ class TargetService {
   static getMatches() {
     return httpClient.get('/match_conversations');
   }
+
+  static deleteTarget(targetId) {
+    return httpClient.delete(`/targets/${targetId}`);
+  }
 }
 
 export default TargetService;

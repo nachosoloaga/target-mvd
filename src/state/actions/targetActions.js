@@ -44,6 +44,19 @@ export const createTarget = createAsyncThunk('target/create', async (target, { d
   }
 });
 
+export const deleteTarget = createAsyncThunk('target/delete', async (targetId, { dispatch }) => {
+  try {
+    const { data } = await targetService.deleteTarget(targetId);
+
+    await dispatch(getTargets());
+    await dispatch(getMatches());
+
+    return data;
+  } catch ({ response: { data } }) {
+    throw parseError(data);
+  }
+});
+
 export const { fulfilled: createTargetFulfilled, rejected: createTargetRejected } = createTarget;
 export const {
   fulfilled: getTargetTopicsFulfilled,
@@ -51,4 +64,5 @@ export const {
 } = getTargetTopics;
 export const { fulfilled: getTargetsFulfilled, rejected: getTargetsRejected } = getTargets;
 export const { fulfilled: getMatchesFulfilled, rejected: getMatchesRejected } = getMatches;
+export const { fulfilled: deleteTargetFulfilled, rejected: deleteTargetRejected } = deleteTarget;
 export const setNewTargetCoords = createAction('target/updateCoords');

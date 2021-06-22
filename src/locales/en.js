@@ -42,6 +42,7 @@ export default {
   'common.form.send': 'Send',
   'common.form.select': 'Select an option',
   'common.back': 'Go back',
+  'common.delete': 'Delete',
 
   // contact form
   'contact.form.messageSent': 'Message sent successfully!',
@@ -64,6 +65,7 @@ export default {
   'target.trendTopics.football': 'Football',
   'target.trendTopics.travel': 'Travel',
   'target.trendTopics.music': 'Music',
+  'target.delete.confirm': 'Are you sure you want to delete this target?',
 
   // feed
 
