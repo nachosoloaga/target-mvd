@@ -1,5 +1,4 @@
 import httpClient from 'httpClient';
-import storeConfig from 'state/store/configureStore';
 
 class UserService {
   static login(user) {
@@ -14,9 +13,7 @@ class UserService {
     return httpClient.post('/users', user);
   }
 
-  static editProfile(payload) {
-    const currentState = storeConfig.store.getState();
-    const userId = currentState.session.user.id;
+  static editProfile(payload, userId) {
     return httpClient.put(`/users/${userId}`, {
       user: {
         email: payload.email

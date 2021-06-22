@@ -1,10 +1,9 @@
 import React, { memo } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
-import { useSession, useDispatch } from 'hooks';
+import { useDispatch } from 'hooks';
 import { login } from 'state/actions/userActions';
-import routes from 'constants/routesPaths';
 import { APP_TITLE } from 'constants/constants';
 
 import LoginForm from 'components/user/LoginForm';
@@ -12,12 +11,7 @@ import LoginForm from 'components/user/LoginForm';
 import { ReactComponent as Smilies } from 'assets/smilies.svg';
 
 const LoginPage = () => {
-  const { authenticated } = useSession();
   const loginRequest = useDispatch(login);
-
-  if (authenticated) {
-    return <Redirect to={routes.welcome} />;
-  }
 
   return (
     <div className="page-container">

@@ -3,16 +3,15 @@ import {
   editProfileFulfilled,
   loginFulfilled,
   logoutFulfilled,
+  logoutRejected,
   signUpFulfilled,
   updateSession
 } from 'state/actions/userActions';
 
 const initialState = {
   authenticated: false,
-  user: null,
+  user: {},
   info: {},
-  matches: [],
-  targets: [],
   error: {}
 };
 
@@ -26,6 +25,7 @@ const sessionSlice = createSlice({
     [signUpFulfilled]: (state, { payload }) => {
       state.user = payload;
     },
+    [logoutRejected]: () => initialState,
     [logoutFulfilled]: () => initialState,
     [updateSession]: (state, { payload }) => {
       state.info = payload;

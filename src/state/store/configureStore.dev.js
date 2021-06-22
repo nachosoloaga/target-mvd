@@ -1,5 +1,4 @@
 import { createLogger } from 'redux-logger';
-import { persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import startsWith from 'lodash/startsWith';
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -14,12 +13,7 @@ export default (initialState => {
   const store = configureStore({
     reducer,
     preloadedState: initialState,
-    middleware: getDefaultMiddleware =>
-      getDefaultMiddleware({
-        serializableCheck: {
-          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-        }
-      }).concat(logger),
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger),
     devTools: true
   });
 
@@ -31,7 +25,5 @@ export default (initialState => {
     });
   }
 
-  const persistor = persistStore(store);
-
-  return { store, persistor };
+  return store;
 })();

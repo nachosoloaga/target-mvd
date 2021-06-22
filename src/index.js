@@ -2,14 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { setAutoFreeze } from 'immer';
-import { PersistGate } from 'redux-persist/integration/react';
 import { AppContainer, setConfig } from 'react-hot-loader';
 import { IntlProvider } from 'react-intl';
 import includes from 'lodash/includes';
 
 import httpClient from 'httpClient';
 import applyDefaultInterceptors from 'httpClient/applyDefaultInterceptors';
-import storeConfig from 'state/store/configureStore';
+import store from 'state/store/configureStore';
 import App from 'components/App';
 import locales from 'locales';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from 'constants/constants';
@@ -45,25 +44,23 @@ const messages = locales[locale];
 
 // Expose store when run in Cypress
 if (window.Cypress) {
-  window.store = storeConfig.store;
+  window.store = store;
 }
 
 const renderApp = Component => {
   render(
     <IntlProvider locale={locale} messages={messages} defaultLocale="en">
-      <Provider store={storeConfig.store}>
-        <PersistGate loading={null} persistor={storeConfig.persistor}>
-          <AppContainer>
-            <Component />
-          </AppContainer>
-        </PersistGate>
+      <Provider store={store}>
+        <AppContainer>
+          <Component />
+        </AppContainer>
       </Provider>
     </IntlProvider>,
     document.getElementById('app')
   );
 };
 
-applyDefaultInterceptors(storeConfig.store, httpClient);
+applyDefaultInterceptors(store, httpClient);
 renderApp(App);
 
 setConfig({ logLevel: 'no-errors-please' });

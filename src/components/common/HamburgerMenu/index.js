@@ -37,6 +37,12 @@ const Menu = ({ handleModal }) => {
               <a onClick={handleModal}>{intl.formatMessage({ id: 'common.contact' })}</a>
             </li>
 
+            <li>
+              {!authenticated && (
+                <Link to="login">{intl.formatMessage({ id: 'signup.signin' })}</Link>
+              )}
+            </li>
+
             {authenticated && (
               <li>
                 <LogoutButton />
