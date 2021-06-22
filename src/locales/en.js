@@ -66,6 +66,7 @@ export default {
   'target.trendTopics.travel': 'Travel',
   'target.trendTopics.music': 'Music',
   'target.delete.confirm': 'Are you sure you want to delete this target?',
+  'target.new.restriction': 'You cannot have more than 10 active targets',
 
   // feed
 

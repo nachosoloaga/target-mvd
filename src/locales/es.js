@@ -70,6 +70,7 @@ export default {
   'target.trendTopics.travel': 'Viajes',
   'target.trendTopics.music': 'Música',
   'target.delete.confirm': 'Está seguro que desea eliminar este objetivo?',
+  'target.new.confirm': 'No puede tener más de 10 objetivos activos',
 
   // feed
   'feed.noMatchesFound': 'Todavía no se encontraron matches para tus objetivos',
